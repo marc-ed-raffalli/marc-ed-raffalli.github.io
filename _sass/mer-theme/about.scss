@@ -1,0 +1,124 @@
+@import "variables";
+
+.mer-about .mer {
+
+  &-section {
+    margin-bottom: 10%;
+    padding: 10% 0 0;
+
+    &:first-of-type {
+      border: none;
+    }
+  }
+
+  &-work {
+    li {
+      margin-bottom: 1rem;
+    }
+
+    & > .row > .mer-list {
+      margin-bottom: 2rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      h4 {
+        padding-bottom: .4rem;
+        border-bottom: 1px #dedede solid;
+      }
+
+      @media (min-width: 768px) {
+        margin-top: 4px; // alignment with title on the left
+      }
+    }
+
+    .mer-responsibilities {
+      margin-top: .5rem;
+      padding-left: 18px;
+      list-style: circle;
+
+      li {
+        margin-bottom: .4rem;
+      }
+    }
+  }
+
+  &-skills {
+    .mer {
+
+      &-language {
+        &Logo {
+          height: 40px;
+          text-align: center;
+
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+          }
+        }
+      }
+      &-domain {
+        &Row {
+          padding: 0 10px;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        &Col {
+          padding: 5px;
+        }
+      }
+
+      &-card {
+        height: 60px;
+        text-align: center;
+
+        &:hover {
+          animation: mer-scaleUp $merAnimationDuration $merAnimationTiming forwards;
+        }
+
+        @media (min-width: 768px) {
+          height: 100px;
+        }
+
+        @media (min-width: 992px) {
+          height: 60px;
+        }
+
+        a {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          &,
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        .mer-alignHelper {
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          height: auto;
+          vertical-align: middle;
+        }
+      }
+
+      &-bulletChart {
+        @media (min-width: 768px) {
+          max-width: 500px;
+        }
+      }
+    }
+  }
+}
+

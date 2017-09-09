@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="mer-index container">
+  <div class="mer-js-alert alert alert-warning" role="alert">
+    <strong>Warning!</strong> JavaScript seems to be disabled in your web browser.
+  </div>
+
+  <p>The site is available in the following languages:</p>
+
+  <p>
+    <span class="mer-redirectLabel"></span>
+    <span class="mer-redirectCountdown"></span>
+  </p>
+
+  <hr>
+
+  <div class="mer-list">
+    {% for lang in site.data.locales %}
+    <div class="mer-item m-2">
+      <a class="p-3 bg-light" href="{{site.baseurl}}/{{lang[0]}}/">
+        <span class="title">{{lang[1].dictionary.name}}</span>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  var supportedLocales = [{% for lang in site.data.locales %} '{{lang[0]}}', {% endfor %}];
+</script>
+<script src="{{site.baseurl}}/assets/landing-page.js"></script>

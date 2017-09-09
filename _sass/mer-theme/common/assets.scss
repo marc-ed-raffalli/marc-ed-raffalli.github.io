@@ -1,0 +1,92 @@
+@import "../variables";
+@import "../mixins/effects";
+
+.mer {
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-breadcrumb {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    &-item {
+      white-space: nowrap;
+      font-size: .8rem;
+
+      a, span {
+        white-space: normal;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &-card {
+    box-shadow: 0 0 3px 0 $merColor_secondary;
+    @include transition(background-color);
+
+    &:hover {
+      background-color: rgba(220, 220, 220, 0.5);
+    }
+  }
+
+  &-tags {
+    display: inline-block;
+
+    .mer-tag {
+      display: inline-block;
+      border-radius: 4px;
+      padding: .25rem .5rem;
+      @include border();
+      box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &-img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+  }
+
+  &-shadedFrame {
+    box-shadow: 0 0 5px 1px rgba(#000, .1);
+  }
+
+  &-icon {
+    color: $merFontColor;
+
+    &.mer-interactive {
+      color: darken($merFontColor, 20%);
+    }
+  }
+
+  &-bullet {
+    &Chart {
+      position: relative;
+      height: 30px;
+      border-radius: 0 3px 3px 0;
+      background-color: rgba(0, 0, 0, .1);
+    }
+
+    &Value {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 60%;
+      margin: auto 0;
+    }
+  }
+}
+
+.highlight {
+  width: 100%;
+  padding: .5rem;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}

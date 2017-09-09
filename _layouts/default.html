@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{site.title}} {% if page.title %} - {{page.title}}{% endif %}</title>
+
+  <meta name="author" content="{{site.author_name}}">
+  <meta name="description" content="{{page.description}}">
+  <meta name="keywords" content="{{page.keywords | join: ' '}}">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link href="{{site.baseurl}}/assets/vendors/styles/ionicons.min.css" rel="stylesheet">
+  <link href="{{site.baseurl}}/assets/vendors/styles/syntax-highlighting/monokai.css" rel="stylesheet">
+  <link href="{{site.baseurl}}/assets/site.css" rel="stylesheet">
+
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  {% include analytics.html %}
+  {% endif %}
+</head>
+<body class="mer-theme">
+
+{% assign locales=site.data.locales %}
+{% assign menuItems=site.menu %}
+{% assign dictionary=site.data.locales[page.lang].dictionary %}
+
+{% include navbar.html
+menuItems=menuItems
+locales=locales
+dictionary=dictionary
+%}
+
+<div class="mer-page">
+  <div class="container">
+    {{content}}
+
+    {% include footer.html %}
+  </div>
+</div>
+
+<script src="{{site.baseurl}}/assets/vendors/scripts/jquery-3.2.1.min.js"></script>
+<script src="{{site.baseurl}}/assets/vendors/scripts/popper.min.js"></script>
+<script src="{{site.baseurl}}/assets/vendors/scripts/bootstrap.min.js"></script>
+<script src="{{site.baseurl}}/assets/site.js"></script>
+</body>
+</html>

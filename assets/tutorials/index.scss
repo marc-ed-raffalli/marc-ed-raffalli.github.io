@@ -1,0 +1,22 @@
+@import "../../_sass/mer-theme/mixins/font";
+
+@include addFontFace(Montserrat, 'tutorials/fonts/montserrat', ('woff', 'woff2'), (
+  createFontMap('montserrat-latin-100', 100),
+  createFontMap('montserrat-latin-100italic', 100, italic),
+  createFontMap('montserrat-latin-200', 200),
+  createFontMap('montserrat-latin-200italic', 200, italic),
+  createFontMap('montserrat-latin-300', 300),
+  createFontMap('montserrat-latin-300italic', 300, italic),
+  createFontMap('montserrat-latin-400', 400),
+  createFontMap('montserrat-latin-400italic', 400, italic),
+  createFontMap('montserrat-latin-500', 500),
+  createFontMap('montserrat-latin-500italic', 500, italic),
+  createFontMap('montserrat-latin-600', 600),
+  createFontMap('montserrat-latin-600italic', 600, italic),
+  createFontMap('montserrat-latin-700', 700),
+  createFontMap('montserrat-latin-700italic', 700, italic),
+  createFontMap('montserrat-latin-800', 800),
+  createFontMap('montserrat-latin-800italic', 800, italic),
+  createFontMap('montserrat-latin-900', 900),
+  createFontMap('montserrat-latin-900italic', 900, italic)
+));

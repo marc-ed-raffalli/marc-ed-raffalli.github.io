@@ -1,0 +1,26 @@
+{% assign translatedSet=include.set | where:'lang', page.lang %}
+{% assign p=page %}
+
+<nav class="mer-breadcrumb mb-3">
+  {% for i in (0..9) %}
+
+  <div class="mer-breadcrumb-item">
+    /
+    {% if page.ref==p.ref %}
+    <span class="mer-secondary p-1">{{p.title}}</span>
+    {% else %}
+    <a class="p-1" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
+    {% endif %}
+  </div>
+
+  {% assign parent=translatedSet | where:'ref', p.parent %}
+  {% assign p=parent[0] %}
+
+  {% if p==nil %}
+  {% break %}
+  {% endif %}
+
+  {% endfor %}
+
+</nav>
+

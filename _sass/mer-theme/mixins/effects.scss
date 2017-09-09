@@ -1,0 +1,13 @@
+@import "../variables";
+
+@mixin transition($property:all, $duration:$merAnimationDuration) {
+  transition: $property $duration $merAnimationTiming;
+}
+
+@mixin border($property: null, $color: $merColor_secondary) {
+  @if ($property) {
+    $property: '-#{$property}';
+  }
+
+  border#{$property}: 1px solid $color;
+}

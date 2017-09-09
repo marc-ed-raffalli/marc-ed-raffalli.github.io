@@ -1,0 +1,147 @@
+experience:
+  header: Experiences
+  types:
+    - name: Professional
+      positions:
+        - title:  Frontend UI Consultant
+          period: Aug 2017 - actual
+          organization: Core Media - Dublin
+          responsibilities:
+            - Assist in leading the implementation of the product rebranding
+            - Provide advice refactoring current solution to a responsive design
+            - Provide UX guidance to achieve simple and coherent design across pages
+            - Advise on client side design and architecture
+            - Design, implementation and testing of new UI components
+
+        - title:  Lead UI Developer
+          period: Sept 2014 - Aug 2017
+          organization: Ericsson LMI
+          responsibilities:
+            - '*Code lead* in the *implementation* and *testing* of *Ericsson branded UI* components / map / charts / i18n (25+ repositories)'
+            - '*Technical presentation* and *UI training* online (20+) / f2f (Ireland / Spain)'
+            - Writing technical articles and videos
+            - '*Mentoring* of team’s trainees (3 permanent, 5 interns)'
+            - Team and individual *support* through internal forums (~2k msgs) / email / IM
+
+        - title:  Frontend Developer
+          period: Jul 2013 - Sept 2014
+          organization: Ericsson LMI
+          responsibilities:
+            - Implementation and testing of *Ericsson branded UI* components
+            - Conduct on-boarding *workshops* online (10+) and f2f (Ireland / India) of new UI teams
+            - Scrum Master (6 months)
+
+        - title:  Trainee Engineer
+          period: Jul 2012 - Jul 2013
+          organization: Ericsson LMI
+          responsibilities:
+            - Authored a *Technical Report* about health monitoring of HP hardware (BL & DL G6 to G8, C3000, C7000)
+            - Creation and maintenance of the architecture team documentation portal (*Confluence*)
+
+    - name: Volunteering
+      positions:
+        - title:  Coderdojo Mentor
+          period: 2016-actual
+          organization: Coderdojo Athlone
+          responsibilities:
+            - Introduce programming concepts to kids (4+) and teenagers
+            - Develop each individual's confidence and presentation skills
+            - Cultivate and develop curiosity in sciences
+
+skills:
+  header: Skills
+  languages:
+    - id:    html5
+      name:  HTML5
+      value: 5
+      color: '#E44D26'
+    - id:    css3
+      name:  CSS3
+      value: 5
+      color: '#0277BD'
+    - id:    javascript
+      name:  JavaScript / ES 6
+      value: 5
+      color: '#FDC910'
+    - id:    java
+      name:  Java
+      value: 3
+      color: '#F01F25'
+  domains:
+    - name: Frameworks and libraries
+      items:
+        - angularjs
+        - backbone
+        - bootstrap
+        - cordova
+        - D3
+        - ionic
+        - jquery
+        - leaflet
+        - less
+        - marionette
+        - react
+        - redux
+        - sass
+    - name: Scripts / Server side
+      items:
+        - async
+        - elasticsearch
+        - express
+        - loopback
+        - nodejs
+    - name: Build / CI / Package manager
+      items:
+        - babel
+        - browserify
+        - gulp
+        - jenkins
+        - npm
+        - webpack
+    - name: Testing
+      items:
+        - mocha
+        - chai
+        - sinon
+        - jasmine
+        - protractor
+        - junit
+        - powermock
+    - name: Others
+      items:
+        - jekyll
+        - liquid
+
+education:
+  types:
+    - name: Education
+      achievements:
+        - title:    MSc in Software Engineering
+          year:     2012
+          location: Ireland
+
+        - title:    B.Sc. Hns in Software Engineering
+          year:     2011
+          location: Ireland
+
+        - title:    Master S2I  / *Information Systems and Internet*
+          year:     2012
+          location: Corsica (France)
+
+        - title:    Licence informatique *equiv Bachelor in Software Engineering*
+          year:     2010
+          location: Corsica (France)
+
+        - title:    BTS IRIS *equiv. Higher Diploma in Software Engineering applied for industries and services*
+          year:     2009
+          location: Corsica (France)
+
+    - name: Certifications
+      achievements:
+        - title: Certified Scrum Master (AgileBear)
+          year:  2014
+          location: Ireland
+
+        - title: Sun Certified Java Programer 6
+          year:  2012
+          location: Ireland

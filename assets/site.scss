@@ -1,0 +1,41 @@
+---
+---
+
+//
+// Jekyll front matter
+// https://jekyllrb.com/docs/assets/
+//
+//
+// Copyright © 2017 Marc Ed. Raffalli
+//
+
+//@import '../node_modules/bootstrap/scss/bootstrap';
+
+@import '../assets/tutorials/index';
+
+@import '../node_modules/bootstrap/scss/bootstrap-reboot';
+@import '../node_modules/bootstrap/scss/utilities';
+@import '../node_modules/bootstrap/scss/mixins';
+@import '../node_modules/bootstrap/scss/transitions';
+@import '../node_modules/bootstrap/scss/bootstrap-grid';
+@import '../node_modules/bootstrap/scss/nav';
+@import '../node_modules/bootstrap/scss/navbar';
+@import '../node_modules/bootstrap/scss/type';
+@import '../node_modules/bootstrap/scss/images';
+@import '../node_modules/bootstrap/scss/alert';
+@import '../node_modules/bootstrap/scss/card';
+
+@import 'mer-theme/site';
+
+html,
+body {
+  height: 100%;
+  font-size: 100%;
+  line-height: 1.2;
+}
+
+@keyframes mer-scaleUp {
+  100% {
+    transform: scale(1.25);
+  }
+}

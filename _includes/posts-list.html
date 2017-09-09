@@ -1,0 +1,31 @@
+{% assign translatedPosts=site.posts | where:'lang', page.lang %}
+{% assign topLevelPosts=translatedPosts | where:'parent', 'posts' %}
+
+<div class="mer-posts">
+  {% for p in topLevelPosts %}
+  {% assign subTopic=translatedPosts | where:'parent', p.ref %}
+  <section class="mer-section">
+    <header class="mer-section-header mb-2">
+      <a class="mer-link" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
+      <span class="mer-secondary small">{{p.date | date: "%Y-%m-%d"}}</span>
+    </header>
+
+    <p>{{p.description}}</p>
+
+    {% if subTopic %}
+    <ul class="mt-2 mb-2">
+      {% for sp in subTopic %}
+      <li>
+        <a href="{{site.baseurl}}{{sp.url}}">{{sp.title}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <footer class="mer-section-footer">
+      {% include tags.html tags=p.tags %}
+    </footer>
+  </section>
+  {% endfor %}
+</div>
+

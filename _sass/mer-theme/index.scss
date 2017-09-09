@@ -1,0 +1,21 @@
+@import "variables";
+
+.mer-index .mer {
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-item {
+    flex: 1;
+
+    a {
+      display: block;
+      font-size: 1.2rem;
+      color: $merFontColor;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="mer-skipArrow">
+  {% case include.direction %}
+  {% when 'up' %}
+  {% assign arrow='ios-arrow-dropup-circle' %}
+  {% when 'down' %}
+  {% assign arrow='ios-arrow-dropdown-circle' %}
+  {% endcase %}
+
+  <a href="{{include.href}}">
+    <span class="mer-secondary small">{{include.message}}</span>
+    <i class="mer-icon icon ion-{{arrow}}"></i>
+  </a>
+</div>

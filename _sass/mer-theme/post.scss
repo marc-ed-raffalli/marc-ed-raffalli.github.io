@@ -1,0 +1,9 @@
+@import "variables";
+@import "mixins/effects";
+
+.mer-post {
+  h2 {
+    padding-top: .8rem;
+    @include border(top);
+  }
+}
