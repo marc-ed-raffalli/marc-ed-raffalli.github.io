@@ -209,4 +209,4 @@ This demo uses the mixin presented in the
 Glad you reached this part!
 
 I hope at this point your font is showing correctly.
-If not, make sure to check out the [common issues](#common-issues) section.
+If not, make sure to check out the common issues section.

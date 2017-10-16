@@ -18,13 +18,13 @@ networks:
     icon: ion-logo-github
 
 menu:
-#  - ref:  projects
   - ref:  posts
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+  - scripts
   - package.json
 
 sass:

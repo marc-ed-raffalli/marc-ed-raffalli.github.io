@@ -2,16 +2,16 @@
   "name": "marc-ed-raffalli.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "scripts/serve.sh",
+    "install": "scripts/install.sh"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "raffalli.marc.ed@hotmail.fr",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
-    "install": "^0.10.1",
+    "ionicons": "^3.0.0",
     "jquery": "^3.2.1",
     "popper.js": "^1.12.5"
   }
