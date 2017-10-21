@@ -26,8 +26,3 @@ layout: default
     {% endfor %}
   </div>
 </div>
-
-<script>
-  var supportedLocales = [{% for lang in site.data.locales %} '{{lang[0]}}', {% endfor %}];
-</script>
-<script src="{{site.baseurl}}/assets/landing-page.js"></script>

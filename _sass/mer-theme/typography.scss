@@ -14,9 +14,11 @@
       margin-top: 0;
     }
   }
+
   h3 {
     font-size: 1.6rem;
   }
+
   h4 {
     font-size: 1.2rem;
   }
@@ -31,13 +33,13 @@
   blockquote {
     color: $merFontColor_secondary;
     @include border(left);
-    padding: .25rem .5rem;
+    padding: $merGap $merGap*2;
 
     p {
       margin: 0;
 
       & + p {
-        margin-top: 1rem;
+        margin-top: $merGap*4;
       }
     }
   }

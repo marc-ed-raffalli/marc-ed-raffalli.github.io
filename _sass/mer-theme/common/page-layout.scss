@@ -16,7 +16,7 @@
   }
 
   &-section {
-    padding: 1rem 0;
+    padding: $merGap*4 0;
     @include border(top);
 
     p {
@@ -55,8 +55,8 @@
   }
 
   &-footer {
-    padding: 1.5rem 0;
-    margin-top: 1.5rem;
+    padding: $merGap*6 0;
+    margin-top: $merGap*6;
     @include border(top);
 
     p {

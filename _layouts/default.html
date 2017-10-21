@@ -42,9 +42,17 @@ dictionary=dictionary
   </div>
 </div>
 
+<script>
+  var mer = {
+    locales: [{% for lang in site.data.locales %} '{{lang[0]}}', {% endfor %}]
+  };
+</script>
+
 <script src="{{site.baseurl}}/assets/vendors/jquery/jquery.slim.min.js"></script>
 <script src="{{site.baseurl}}/assets/vendors/popper/popper.min.js"></script>
 <script src="{{site.baseurl}}/assets/vendors/bootstrap/bootstrap.min.js"></script>
+
 <script src="{{site.baseurl}}/assets/site.js"></script>
+
 </body>
 </html>
