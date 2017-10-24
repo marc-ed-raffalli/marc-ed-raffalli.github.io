@@ -5,7 +5,6 @@
  *
  * See LICENCE file
  */
-
 @import "../variables";
 @import "../mixins/effects";
 
@@ -73,6 +72,14 @@
     }
   }
 
+  &-resizable {
+    margin: $merGap*4 0;
+    overflow: auto;
+    resize: both;
+    border: 1px solid $merColor_secondary;
+    background-color: #f2f2f2;
+  }
+
   &-bullet {
     &Chart {
       position: relative;
@@ -94,6 +101,7 @@
 .highlight {
   width: 100%;
   padding: $merGap*2;
+  margin-top: $merGap*2;
   border-radius: 4px;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
   overflow: auto;

@@ -6,4 +6,9 @@
     padding-top: .8rem;
     @include border(top);
   }
+
+  .mer-socials {
+    margin-top: $merGap*6;
+    text-align: center;
+  }
 }

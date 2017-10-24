@@ -162,13 +162,13 @@ One of the many reasons why is because the element's height differs based on the
 As the lines wrap on smaller screens, the element will need more height and should push the rest below.
 Elements positioned absolutely cannot do that.
 
-<div class="mer-resizable">
+<div class="mer-resizable" style="height: 250px">
     <div style="position: relative;">
-        <div style="position: absolute; top:0; left: 0; width: 50%">
+        <div style="position: absolute; top:40px; left: 0; width: 50%">
             <p>Left side</p>
 <pre>
 position: absolute; 
-top:0;
+top:40px;
 left:0;
 width: 50%;
 </pre>
@@ -177,11 +177,11 @@ width: 50%;
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
         </div>
-        <div style="position: absolute; top:0; right: 0; width: 50%">
+        <div style="position: absolute; top:40px; right: 0; width: 50%">
             <p>Right side</p>
 <pre>
 position: absolute; 
-top:0; 
+top:40px; 
 right: 0;
 width: 50%;
 </pre>
@@ -229,34 +229,35 @@ When you set it on an element, you will need to reset the default behavior on it
 While so far it is the less of many evils, it is still not perfect.
 You can see on the example below the gap caused by the white space as well as the content hidden on the right edge. 
 
-```html
-<div style="white-space: nowrap; background-color: red;">
-    <div style="display: inline-block; width: 50%; white-space: normal; background-color: #333;">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+<div class="mer-resizable" style="height: 250px">
+    <div style="white-space: nowrap; background-color: red;">
+        <div style="display: inline-block; width: 50%; white-space: normal; background-color: #ccc;">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
 <pre>
 display: inline-block;
 width: 50%;
 white-space: normal; 
-background-color: #333;
+background-color: #ccc;
 </pre>
-    </div>
-    <div style="display: inline-block; width: 50%; white-space: normal; background-color: #333;">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+        </div>
+        <div style="display: inline-block; width: 50%; white-space: normal; background-color: #ccc;">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
 <pre>
 display: inline-block;
 width: 50%;
 white-space: normal; 
-background-color: #333;
+background-color: #ccc;
 </pre>
+        </div>
     </div>
 </div>
-```
+
 
 ### Don't hack the font-size
 
@@ -302,37 +303,9 @@ In this case, they can be used in the following way to solve the issue:
 }
 ```
 
-<div class="mer-resizable">
-    <div style="display: flex; flex-wrap: nowrap">
-<pre>
-display: flex;
-flex-wrap: nowrap;
-</pre>
-        <div style="flex-basis: 50%">
-            <p>Left side</p>
-<pre>
-flex-basis: 50%
-</pre>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-        </div>
-        <div style="flex-basis: 50%">
-            <p>Right side</p>
-<pre>
-flex-basis: 50%
-</pre>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-        </div>
-    </div>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-</div>
-
 That simple? yes!
+
+<div class="mb-3">
+<p data-height="500" data-theme-id="light" data-slug-hash="qPwNLN" data-default-tab="html,result" data-user="marc-ed-raffalli" data-embed-version="2" data-pen-title="Flex box demo for horizontal split" class="codepen">See the Pen <a href="https://codepen.io/marc-ed-raffalli/pen/qPwNLN/">Flex box demo for horizontal split</a> by Marc Ed Raffalli (<a href="https://codepen.io/marc-ed-raffalli">@marc-ed-raffalli</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>

@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "scripts/serve.sh",
-    "install": "scripts/install.sh"
+    "install": "scripts/install.sh",
+    "build": "jekyll build"
   },
   "keywords": [],
   "author": "raffalli.marc.ed@hotmail.fr",

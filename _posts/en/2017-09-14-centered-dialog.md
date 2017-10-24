@@ -173,41 +173,47 @@ The dialog message should have `z-index: 1` to be displayed on top.
 
 ### Demo
 
-// TODO
-
-### Conclusion
-
-Glad you reached this part!
-
-I hope at this point your dialog is showing correctly.
-If not, make sure to check out the section below!
-
+<div class="mb-3">
+<p data-height="500" data-theme-id="light" data-slug-hash="OxqKqK" data-default-tab="html,result" data-user="marc-ed-raffalli" data-embed-version="2" data-pen-title="Simple CSS only modal dialog" class="codepen">See the Pen <a href="https://codepen.io/marc-ed-raffalli/pen/OxqKqK/">Simple CSS only modal dialog</a> by Marc Ed Raffalli (<a href="https://codepen.io/marc-ed-raffalli">@marc-ed-raffalli</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
 
 ### Common issues
 
-#### Rendering issues 
+**Rendering issues** 
 
 Check the following:
 
 - The content box has `display: block` or similar. (Not `inline` / `none`)
 - If the pseudo element (method 2) is used, `.dialog:before` has `content: ''`
 
-#### Message text overflows horizontally
+**Message text overflows horizontally**
 
 - If your message is longer than a couple of words, you may consider using `max-width: 75%` (or any % value).
 - If your message is one long word without break, you can either:
   - force it to wrap to the next line with `word-break: break-word;`
   - keep one line and display `...` by applying these rules to the element containing the text
     ```css
-    text-overflow: ellipsis;
-    overflow: hidden;
+    .message { 
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
     ```
 
-#### Message text overflows vertically
+**Message text overflows vertically**
 
 - If your message height is greater than your box height, 
   you should apply these styles:
   ```css
-  max-height: 50%;  /* force a specific maximum height */
-  overflow-y: auto; /* show a scrollbar when the maximum height is reached */
+  .message {
+    max-height: 50%;  /* force a specific maximum height */
+    overflow-y: auto; /* show a scrollbar when the maximum height is reached */
+  }
   ```
+
+### Conclusion
+
+Glad you reached this part!
+
+I hope at this point your dialog is showing correctly.
+If not, make sure to check out the section about common issues!
