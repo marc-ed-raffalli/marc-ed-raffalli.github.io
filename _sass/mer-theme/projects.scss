@@ -1,0 +1,46 @@
+@import "variables";
+@import "mixins/effects";
+
+.mer-projects {
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  &-description {
+    font-size: 80%;
+
+    .mer-link {
+      .mer-icon {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &-image {
+    img {
+      max-height: 200px;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    &-description {
+      font-size: 100%;
+    }
+
+    img {
+      max-height: none;
+      height: 80%;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    img {
+      height: 100%;
+    }
+  }
+}

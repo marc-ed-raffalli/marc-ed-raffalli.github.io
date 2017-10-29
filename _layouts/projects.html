@@ -1,0 +1,58 @@
+---
+layout: page
+---
+
+<div class="mer-projects">
+  {% assign dictionary=site.data.locales[page.lang].dictionary %}
+  {% assign projects=site.data.locales[page.lang].projects %}
+
+  {% assign translatedPages=site.pages | where:'lang', page.lang %}
+
+  {% for project in projects.list %}
+  <div class="mer-section">
+    {% assign projectPage=translatedPages | where:'ref', project.ref %}
+    {% assign projectTags=projectPage[0].tags %}
+
+    {% assign descriptionClasses='col-12' %}
+
+    {% if project.image %}
+    {% assign descriptionClasses='col-sm-8 col-md-7' %}
+    {% endif %}
+
+    <div class="row">
+      <h2 class="col-12 mb-2 order-2 order-sm-1">
+        <a href="{{site.baseurl}}{{projectPage[0].url}}">{{projectPage[0].title}}</a>
+      </h2>
+
+      {% if project.image %}
+      <div class="col-sm-4 col-md-5 order-1 order-sm-3 mer-projects-image">
+        <a href="{{site.baseurl}}{{projectPage[0].url}}">
+          <img class="mer-img mer-shadedFrame p-2 mb-2"
+               src="{{project.image.url}}"
+               alt="{{project.image.alt}}">
+        </a>
+      </div>
+      {% endif %}
+
+      <div class="{{descriptionClasses}} order-3 order-sm-2 mer-projects-description">
+        <div class="mb-2">
+          {{projectPage[0].description | markdownify}}
+
+          <a class="d-none d-md-inline-block"
+             href="{{site.baseurl}}{{projectPage[0].url}}">{{dictionary.readMore}}...</a>
+
+          <div class="mer-links mt-2">
+            <a class="mer-link"
+               href="{{project.repo}}">
+              <i class="mer-icon ion ion-logo-github"></i>
+              {{dictionary.viewOnGitHub}}
+            </a>
+          </div>
+        </div>
+
+        {% include tags.html tags=projectTags %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

@@ -11,7 +11,7 @@ about: >
   Self motivated and autonomous, I have no issues working in team or individually.
 
 listedPages:
-#  - ref: projects
-#    description: Discover more about my side projects and related articles...
+  - ref: projects
+    description: Discover more about my side projects and related articles...
   - ref: posts
     description: Some tricks worth sharing and remembering...

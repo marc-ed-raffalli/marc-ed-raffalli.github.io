@@ -2,6 +2,6 @@
 title:      Projects
 lang:       en
 ref:        projects
-layout:     page
+layout:     projects
 permalink:  /en/projects/
 ---

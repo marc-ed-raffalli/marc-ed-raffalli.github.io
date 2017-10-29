@@ -43,12 +43,15 @@
   }
 
   &-tags {
-    display: inline-block;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-left: -$merGap;
 
     .mer-tag {
-      display: inline-block;
       border-radius: 4px;
       padding: $merGap $merGap*2;
+      margin: $merGap;
       @include border();
       box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
     }

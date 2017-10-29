@@ -1,4 +1,6 @@
 name:       English
 previous:   Previous
 next:       Next
-toggleNav:  Toggle navigation
+toggleNav:    Toggle navigation
+viewOnGitHub: View on GitHub
+readMore:     Read more

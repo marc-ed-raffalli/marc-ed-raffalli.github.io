@@ -1,148 +1,152 @@
 @import "variables";
 @import "mixins/effects";
 
-.mer-home .mer {
+.mer-home {
+  padding-top: 3rem;
 
-  &-section {
-    margin-bottom: 10%;
-    padding: 10% 0 0;
+  .mer {
 
-    &:first-of-type {
-      border: none;
-    }
+    &-section {
+      margin-bottom: 10%;
+      padding: 10% 0 0;
 
-    h3 {
-      margin: 0;
-    }
-  }
-
-  &-page-overview {
-    .mer-link {
-      display: inline-block;
-      width: 2.5rem;
-      height: 2.5rem;
-      padding: $merGap*4;
-      font-size: 2.5rem;
-      line-height: 2.5rem;
-      text-align: center;
-      box-sizing: content-box;
-      border-radius: 50%;
-      @include transition(background-color);
-
-      &:hover {
-        background-color: rgba(#000, .1);
-      }
-    }
-  }
-
-  &-work {
-    li {
-      margin-bottom: 1rem;
-    }
-
-    & > .row > .mer-list {
-      margin-bottom: 2rem;
-
-      &:last-of-type {
-        margin-bottom: 0;
+      &:first-of-type {
+        border: none;
       }
 
-      h4 {
-        padding-bottom: .4rem;
-        border-bottom: 1px #dedede solid;
-      }
-
-      @media (min-width: 768px) {
-        margin-top: 4px; // alignment with title on the left
+      h3 {
+        margin: 0;
       }
     }
 
-    .mer-responsibilities {
-      margin-top: $merGap*2;
-      padding-left: 1.25rem;
-      list-style: circle;
+    &-page-overview {
+      .mer-link {
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: $merGap*4;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        text-align: center;
+        box-sizing: content-box;
+        border-radius: 50%;
+        @include transition(background-color);
 
+        &:hover {
+          background-color: rgba(#000, .1);
+        }
+      }
+    }
+
+    &-work {
       li {
-        margin-bottom: .4rem;
+        margin-bottom: 1rem;
+      }
+
+      & > .row > .mer-list {
+        margin-bottom: 2rem;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        h4 {
+          padding-bottom: .4rem;
+          border-bottom: 1px #dedede solid;
+        }
+
+        @media (min-width: $screen-md) {
+          margin-top: 4px; // alignment with title on the left
+        }
+      }
+
+      .mer-responsibilities {
+        margin-top: $merGap*2;
+        padding-left: 1.25rem;
+        list-style: circle;
+
+        li {
+          margin-bottom: .4rem;
+        }
       }
     }
-  }
 
-  &-skills {
-    .mer {
+    &-skills {
+      .mer {
 
-      &-language {
-        &Logo {
-          height: 40px;
+        &-language {
+          &Logo {
+            height: 40px;
+            text-align: center;
+
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              height: auto;
+            }
+          }
+        }
+        &-domain {
+          &Row {
+            padding: 0 $merGap*2;
+            margin-top: $merGap*4;
+            margin-bottom: $merGap*4;
+          }
+
+          &Col {
+            padding: $merGap*2;
+          }
+        }
+
+        &-card {
+          height: 60px;
           text-align: center;
+
+          &:hover {
+            animation: mer-scaleUp $merAnimationDuration $merAnimationTiming forwards;
+          }
+
+          @media (min-width: $screen-md) {
+            height: 100px;
+          }
+
+          @media (min-width: $screen-lg) {
+            height: 60px;
+          }
+
+          a {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            &,
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+          .mer-alignHelper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+          }
 
           img {
             max-width: 100%;
             max-height: 100%;
             height: auto;
-          }
-        }
-      }
-      &-domain {
-        &Row {
-          padding: 0 $merGap*2;
-          margin-top: $merGap*4;
-          margin-bottom: $merGap*4;
-        }
-
-        &Col {
-          padding: $merGap*2;
-        }
-      }
-
-      &-card {
-        height: 60px;
-        text-align: center;
-
-        &:hover {
-          animation: mer-scaleUp $merAnimationDuration $merAnimationTiming forwards;
-        }
-
-        @media (min-width: 768px) {
-          height: 100px;
-        }
-
-        @media (min-width: 992px) {
-          height: 60px;
-        }
-
-        a {
-          display: flex;
-          flex-wrap: nowrap;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          &,
-          &:hover {
-            text-decoration: none;
+            vertical-align: middle;
           }
         }
 
-        .mer-alignHelper {
-          display: inline-block;
-          height: 100%;
-          vertical-align: middle;
-        }
-
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          height: auto;
-          vertical-align: middle;
-        }
-      }
-
-      &-bulletChart {
-        @media (min-width: 768px) {
-          max-width: 500px;
+        &-bulletChart {
+          @media (min-width: $screen-md) {
+            max-width: 500px;
+          }
         }
       }
     }
-  }
 
+  }
 }

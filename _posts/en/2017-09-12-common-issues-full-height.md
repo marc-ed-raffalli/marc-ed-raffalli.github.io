@@ -1,5 +1,5 @@
 ---
-layout:       post
+layout:       topic
 lang:         en
 parent:       post-common-issues
 title:        Full height

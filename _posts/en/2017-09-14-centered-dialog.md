@@ -1,5 +1,5 @@
 ---
-layout:       post
+layout:       topic
 lang:         en
 ref:          centered-dialog
 parent:       posts

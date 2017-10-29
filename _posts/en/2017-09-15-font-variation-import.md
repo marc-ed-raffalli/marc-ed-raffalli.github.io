@@ -1,5 +1,5 @@
 ---
-layout:       post
+layout:       topic
 lang:         en
 ref:          font-face-and-font-variations
 parent:       posts
