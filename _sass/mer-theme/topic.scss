@@ -8,7 +8,18 @@
     @include border(top);
   }
 
+  p {
+    .mer-icon {
+      font-size: 120%;
+      vertical-align: baseline;
+    }
+  }
+
   .mer {
+    &-img {
+      max-height: 350px;
+    }
+
     &-socials {
       margin-top: $merGap*6;
       text-align: center;
