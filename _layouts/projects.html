@@ -4,13 +4,15 @@ layout: page
 
 <div class="mer-projects">
   {% assign dictionary=site.data.locales[page.lang].dictionary %}
-  {% assign projects=site.data.locales[page.lang].projects %}
+  {% assign projects=site.data.projects %}
 
   {% assign translatedPages=site.pages | where:'lang', page.lang %}
 
   {% for project in projects.list %}
+  {% assign projectPage=translatedPages | where:'ref', project.ref %}
+
+  {% if projectPage %}
   <div class="mer-section">
-    {% assign projectPage=translatedPages | where:'ref', project.ref %}
     {% assign projectTags=projectPage[0].tags %}
 
     {% assign descriptionClasses='col-12' %}
@@ -54,5 +56,6 @@ layout: page
       </div>
     </div>
   </div>
+  {% endif %}
   {% endfor %}
 </div>

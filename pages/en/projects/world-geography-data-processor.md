@@ -10,5 +10,5 @@ description:  Node based generic data processor mechanism to process data sets f
               Loads data from Git sources and pass it through a list of prioritized processors before output.
 
 permalink:    /en/projects/world-geography-data-processor
-tags:         [Node, Mocha, Git, Geography, data processor]
+tags:         [Node, Mocha, Localized data, Geography, data processor]
 ---

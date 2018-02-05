@@ -1,0 +1,16 @@
+list:
+  - ref:    geo-game
+    repo:   https://github.com/marc-ed-raffalli/geo-game/
+    page:   https://marc-ed-raffalli.github.io/geo-game/
+    image:
+      url:  '/assets/img/projects/geo-game/europe.svg'
+      alt:  Image for World Geography Game
+
+  - ref:    world-geography-data-processor
+    repo:   https://github.com/marc-ed-raffalli/world-geography-data/
+
+  - ref:    geo-json-data-processor
+    repo:   https://github.com/marc-ed-raffalli/countries-geo-data/
+
+  - ref:    confluence-to-jekyll-data-processor
+    repo:   https://github.com/marc-ed-raffalli/confluence-to-jekyll/

@@ -13,10 +13,15 @@ permalink:    /en/projects/geo-game
 tags:         [React, Redux, React Router, Leaflet, Bootstrap 4, deployment, game]
 ---
 
+{% assign projects=site.data.projects %}
+{% assign geoGameProject=projects.list | where:'ref', page.ref | first %}
+
 I long wanted to implement a game to help learning and remembering the countries of the world.
 Sure, there is already a plethora of similar games already available online, but the motivation was more in the development aspect.
 
-[**Play the game**](https://marc-ed-raffalli.github.io/geo-game/){:class="d-block text-center"}
+{% include gitHubCodeOn.html url=geoGameProject.repo %}
+
+[**Play the game**]({{geoGameProject[0].page}}){:class="d-block text-center"}
 
 ## Principles
 
@@ -181,9 +186,6 @@ The learning curve was greatly reduced thanks to *Dan Abramov* who published two
 
 The App skeleton and the build are handled by
 [Create React App](https://github.com/facebookincubator/create-react-app). 
-
-Code available on
-[GitHub <i class="mer-icon ion ion-logo-github"></i>](https://github.com/marc-ed-raffalli/geo-game)
 
 ## Localization
 
