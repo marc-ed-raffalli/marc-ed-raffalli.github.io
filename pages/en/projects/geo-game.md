@@ -31,18 +31,27 @@ The principles planned for the first release were kept quite simple.
 
 ![Landing page]({{site.baseurl}}/assets/img/projects/geo-game/landing-page.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
 
+**Update 05/02/2018**
+
+The v2 focused on bringing multi languages support with 20 languages.
+
+![Landing page v2]({{site.baseurl}}/assets/img/projects/geo-game/landing-page-v2.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
+
 ## Data
 
 {% assign translatedPages=site.pages | where:'lang', page.lang %}
-{% assign translatedPageDef=translatedPages | where:'ref', 'geo-json-data-processor' %}
+
+### Data v1
+
+{% assign geoJsonTranslatedPageDef=translatedPages | where:'ref', 'geo-json-data-processor' %}
   
-The data about the countries is coming from:
+Data sources:
 
 - [Ash Kyd](https://github.com/AshKyd/geojson-regions)
 - [Mohammed Le Doze](https://github.com/mledoze/countries)
 
 The data was crunched together in the
-[{{translatedPageDef[0].title}}]({{site.baseurl}}{{translatedPageDef[0].url}}) project.
+[{{geoJsonTranslatedPageDef[0].title}}]({{site.baseurl}}{{geoJsonTranslatedPageDef[0].url}}) project.
 The output is under the following format: (*abbreviated for simplicity*)
 
 ```json
@@ -81,6 +90,83 @@ The output is under the following format: (*abbreviated for simplicity*)
 - `geometry`     used to show the countries' shape and implement the interactive feature.  
 - `translations` will be used in the second release which should support multiple languages.
 
+### Data v2
+
+{% assign worldGeoDataTranslatedPageDef=translatedPages | where:'ref', 'world-geography-data-processor' %}
+
+Data sources:
+
+- [Unicode CLDR](https://github.com/unicode-cldr/)
+  - Country containment (equiv: Continent => Region => Country)
+  - Translated names for:
+    - Languages
+    - Continents
+    - Regions / Sub-regions
+    - Countries / territories
+    - Capitals
+  
+- [Ash Kyd](https://github.com/AshKyd/geojson-regions)
+  - Geo Json geometries
+- [Mohammed Le Doze](https://github.com/mledoze/countries)
+  - area
+  - borders
+  - capital city (en only)
+  - latlng
+  - flag
+
+
+The data for v2 was reorganized into two groups:
+
+- translation sensitive data (country names, capital) 
+- generic data (geojson, flag, etc)
+
+The data was crunched together in the
+[{{worldGeoDataTranslatedPageDef[0].title}}]({{site.baseurl}}{{worldGeoDataTranslatedPageDef[0].url}}) project.
+The languages to target in the extraction are passed as params, making painless the selection of supported locales. 
+
+
+#### Output folder structure
+
+```
+flags/
+  ABW.svg
+  AFG.svg
+  AGO.svg
+  ...
+geo-json/
+  africa.json
+  asia.json
+  europe.json
+  ...
+locales/          --- localized data  
+  bg/             --- by locale code
+    africa.json   --- by continent
+    asia.json
+    europe.json
+    ...
+  ca/
+  cs/
+  ...
+status.json       --- support of one language compared to English (count, pct, missing)
+locales.json
+```
+
+Localized data sample for English:
+
+```json
+{
+ "IE": {
+    "name": "Ireland",
+    "continent": "Europe",
+    "locatedIn": [
+      "Europe",
+      "Northern Europe"
+    ],
+    "capital": "Dublin"
+  }
+}
+```
+
 
 ## Implementation
 
@@ -99,6 +185,15 @@ The App skeleton and the build are handled by
 Code available on
 [GitHub <i class="mer-icon ion ion-logo-github"></i>](https://github.com/marc-ed-raffalli/geo-game)
 
+## Localization
+
+*Added on 05/02/2018*
+
+The App localization was achieved with [react-localize-redux](https://ryandrewjohnson.github.io/react-localize-redux/)
+(see [author's article](https://medium.com/@ryandrewjohnson/adding-multi-language-support-to-your-react-redux-app-cf6e64250050)) 
+
+The loading of the translated data is done using async ES6 import to allow chunking of the bundle and reduce bandwidth usage.
+
 ## Map
 
 A core part of the game and a key to its usability is the interactive map.
@@ -106,7 +201,7 @@ A core part of the game and a key to its usability is the interactive map.
 It was implemented with the components from 
 [React Leaflet](https://github.com/PaulLeCam/react-leaflet/)
 (*wrapper for [Leaflet](http://leafletjs.com/)*)
-and uses the tiles from the 
+and uses the tiles from the free
 [Mapbox](https://www.mapbox.com/) service. 
 
 ### Geo JSON layer
@@ -121,7 +216,7 @@ layer component is used to display the `geometry` (*mentioned above*), style the
 The [`Marker`](https://github.com/PaulLeCam/react-leaflet/blob/master/docs/Components.md#marker)
 layer component is used to display the results at the end of the game.
 Each marker is placed on the coordinates pointed by `properties.latlng` and listens to the click event.
-On click, the map shows then a custom popup with the country flag and information. 
+On click, the map shows a custom popup with the country flag and information. 
  
 ![Marker layer]({{site.baseurl}}/assets/img/projects/geo-game/popup-layer.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
 
@@ -213,8 +308,12 @@ A big thanks to the authors of these libraries / resources:
 - [redux-logger](https://github.com/evgenyrodionov/redux-logger)
 - [redux-thunk](https://github.com/gaearon/redux-thunk)
 - [react-ga](https://github.com/react-ga/react-ga)
+- **v1**
 - [react-ionicons](https://zamarrowski.github.io/react-ionicons/)
 - [ionicons](http://ionicons.com/)
+- **v2**
+- [react-icons](http://gorangajic.github.io/react-icons/)
+- [React Localize Redux](https://ryandrewjohnson.github.io/react-localize-redux/)
 
 **Images:**
 - [World Map](https://commons.wikimedia.org/wiki/File:Continents.svg)
