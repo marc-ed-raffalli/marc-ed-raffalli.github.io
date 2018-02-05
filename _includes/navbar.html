@@ -20,10 +20,10 @@
 
       {% for menu in include.menuItems %}
 
-      {% assign translatedMenuItem=translatedMenuItems | where:'ref', menu.ref %}
+      {% assign translatedMenuItem=translatedMenuItems | where:'ref', menu.ref | first %}
 
-      <li class="nav-item {% if translatedMenuItem[0].url == page.url %}active{% endif %}">
-        <a class="nav-link" href="{{site.baseurl}}{{translatedMenuItem[0].url}}">{{translatedMenuItem[0].title}}</a>
+      <li class="nav-item {% if translatedMenuItem.url == page.url %}active{% endif %}">
+        <a class="nav-link" href="{{site.baseurl}}{{translatedMenuItem.url}}">{{translatedMenuItem.title}}</a>
       </li>
       {% endfor %}
     </ul>
@@ -33,7 +33,7 @@
       {% for locale in include.locales %}
 
       {% assign localePages=site.pages | where:'lang', locale[0] %}
-      {% assign translatedMenuItem=localePages | where:'ref', page.ref %}
+      {% assign translatedMenuItem=localePages | where:'ref', page.ref | first %}
 
       {% comment %}
       find the matching locale page based on ref (translated name-url):
@@ -41,10 +41,10 @@
       - /budget-eyes/fr/a-propos/
       {% endcomment %}
 
-      {% if translatedMenuItem[0] %}
+      {% if translatedMenuItem %}
       <li class="nav-item">
         <a class="nav-link {% if locale[0] == page.lang %}active{% endif %}"
-           href="{{site.baseurl}}{{translatedMenuItem[0].url}}">{{locale[0] | upcase}}</a>
+           href="{{site.baseurl}}{{translatedMenuItem.url}}">{{locale[0] | upcase}}</a>
       </li>
       {% endif %}
 

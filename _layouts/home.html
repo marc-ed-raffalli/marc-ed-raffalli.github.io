@@ -16,17 +16,17 @@ layout: default
   {% assign translatedPages=site.pages | where:'lang', page.lang %}
 
   {% for listedPage in home.listedPages %}
-  {% assign translatedPageDef=translatedPages | where:'ref', listedPage.ref %}
+  {% assign translatedPageDef=translatedPages | where:'ref', listedPage.ref | first %}
   <section class="mer-section mer-page-overview">
     <div class="row align-items-center">
       <div class="col-md-10">
         <h2>
-          <a href="{{site.baseurl}}{{translatedPageDef[0].url}}">{{translatedPageDef[0].title}}</a>
+          <a href="{{site.baseurl}}{{translatedPageDef.url}}">{{translatedPageDef.title}}</a>
         </h2>
         <p>{{listedPage.description}}</p>
       </div>
       <div class="col-md-2 text-right text-md-center">
-        <a href="{{site.baseurl}}{{translatedPageDef[0].url}}" class="mer-link mer-secondary">
+        <a href="{{site.baseurl}}{{translatedPageDef.url}}" class="mer-link mer-secondary">
           <i class="ion-md-arrow-round-forward"></i>
         </a>
       </div>

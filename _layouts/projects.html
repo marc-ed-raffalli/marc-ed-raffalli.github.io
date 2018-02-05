@@ -9,11 +9,11 @@ layout: page
   {% assign translatedPages=site.pages | where:'lang', page.lang %}
 
   {% for project in projects.list %}
-  {% assign projectPage=translatedPages | where:'ref', project.ref %}
+  {% assign projectPage=translatedPages | where:'ref', project.ref | first %}
 
   {% if projectPage %}
   <div class="mer-section">
-    {% assign projectTags=projectPage[0].tags %}
+    {% assign projectTags=projectPage.tags %}
 
     {% assign descriptionClasses='col-12' %}
 
@@ -23,12 +23,12 @@ layout: page
 
     <div class="row">
       <h2 class="col-12 mb-2 order-2 order-sm-1">
-        <a href="{{site.baseurl}}{{projectPage[0].url}}">{{projectPage[0].title}}</a>
+        <a href="{{site.baseurl}}{{projectPage.url}}">{{projectPage.title}}</a>
       </h2>
 
       {% if project.image %}
       <div class="col-sm-4 col-md-5 order-1 order-sm-3 mer-projects-image">
-        <a href="{{site.baseurl}}{{projectPage[0].url}}">
+        <a href="{{site.baseurl}}{{projectPage.url}}">
           <img class="mer-img mer-shadedFrame p-2 mb-2"
                src="{{site.baseurl}}{{project.image.url}}"
                alt="{{project.image.alt}}">
@@ -38,10 +38,10 @@ layout: page
 
       <div class="{{descriptionClasses}} order-3 order-sm-2 mer-projects-description">
         <div class="mb-2">
-          {{projectPage[0].description | markdownify}}
+          {{projectPage.description | markdownify}}
 
           <a class="d-none d-md-inline-block"
-             href="{{site.baseurl}}{{projectPage[0].url}}">{{dictionary.readMore}}...</a>
+             href="{{site.baseurl}}{{projectPage.url}}">{{dictionary.readMore}}...</a>
 
           <div class="mer-links mt-2">
             <a class="mer-link"

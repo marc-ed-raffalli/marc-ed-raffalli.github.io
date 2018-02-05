@@ -13,8 +13,7 @@
     {% endif %}
   </div>
 
-  {% assign parent=translatedSet | where:'ref', p.parent %}
-  {% assign p=parent[0] %}
+  {% assign p=translatedSet | where:'ref', p.parent | first %}
 
   {% if p==nil %}
   {% break %}

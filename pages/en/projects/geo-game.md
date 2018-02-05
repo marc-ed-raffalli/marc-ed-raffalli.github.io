@@ -21,7 +21,7 @@ Sure, there is already a plethora of similar games already available online, but
 
 {% include gitHubCodeOn.html url=geoGameProject.repo %}
 
-[**Play the game**]({{geoGameProject[0].page}}){:class="d-block text-center"}
+[**Play the game**]({{geoGameProject.page}}){:class="d-block text-center"}
 
 ## Principles
 
@@ -48,7 +48,7 @@ The v2 focused on bringing multi languages support with 20 languages.
 
 ### Data v1
 
-{% assign geoJsonTranslatedPageDef=translatedPages | where:'ref', 'geo-json-data-processor' %}
+{% assign geoJsonTranslatedPageDef=translatedPages | where:'ref', 'geo-json-data-processor' | first %}
   
 Data sources:
 
@@ -56,7 +56,7 @@ Data sources:
 - [Mohammed Le Doze](https://github.com/mledoze/countries)
 
 The data was crunched together in the
-[{{geoJsonTranslatedPageDef[0].title}}]({{site.baseurl}}{{geoJsonTranslatedPageDef[0].url}}) project.
+[{{geoJsonTranslatedPageDef.title}}]({{site.baseurl}}{{geoJsonTranslatedPageDef.url}}) project.
 The output is under the following format: (*abbreviated for simplicity*)
 
 ```json
