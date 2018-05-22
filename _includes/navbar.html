@@ -1,38 +1,39 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  {% if page.lang %}
-  <a class="navbar-brand" href="{{site.baseurl}}/{{page.lang}}/">{{site.title}}</a>
-  <button class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="{{include.dictionary.toggleNav}}">
-    <span class="navbar-toggler-icon"></span>
-    {% else %}
-    <span class="navbar-brand">{{site.title}}</span>
-    {% endif %}
-  </button>
+  <div class="container">
+    {% if page.lang %}
+    <a class="navbar-brand" href="{{site.baseurl}}/{{page.lang}}/">{{site.title}}</a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="{{include.dictionary.toggleNav}}">
+      <span class="navbar-toggler-icon"></span>
+      {% else %}
+      <span class="navbar-brand">{{site.title}}</span>
+      {% endif %}
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      {% assign translatedMenuItems=site.pages | where:'lang', page.lang %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        {% assign translatedMenuItems=site.pages | where:'lang', page.lang %}
 
-      {% for menu in include.menuItems %}
+        {% for menu in include.menuItems %}
 
-      {% assign translatedMenuItem=translatedMenuItems | where:'ref', menu.ref | first %}
+        {% assign translatedMenuItem=translatedMenuItems | where:'ref', menu.ref | first %}
 
-      <li class="nav-item {% if translatedMenuItem.url == page.url %}active{% endif %}">
-        <a class="nav-link" href="{{site.baseurl}}{{translatedMenuItem.url}}">{{translatedMenuItem.title}}</a>
-      </li>
-      {% endfor %}
-    </ul>
-    <ul class="navbar-nav">
-      {% if page.ref %}
+        <li class="nav-item {% if translatedMenuItem.url == page.url %}active{% endif %}">
+          <a class="nav-link" href="{{site.baseurl}}{{translatedMenuItem.url}}">{{translatedMenuItem.title}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="navbar-nav">
+        {% if page.ref %}
 
-      {% assign translatedPages= '' | split: '' %}
+        {% assign translatedPages= '' | split: '' %}
 
-      {% for locale in include.locales %}
+        {% for locale in include.locales %}
         {% comment %}
         find the matching locale page based on ref (translated name-url):
         - /budget-eyes/en/about/
@@ -43,21 +44,22 @@
         {% assign translatedMenuItem=localePages | where:'ref', page.ref %}
 
         {% assign translatedPages= translatedPages | concat: translatedMenuItem %}
-      {% endfor %}
+        {% endfor %}
 
-      {% assign translatedPagesLen= translatedPages|size %}
+        {% assign translatedPagesLen= translatedPages|size %}
 
-      {% if translatedPagesLen>=2 %}
+        {% if translatedPagesLen>=2 %}
         {% for translatedPage in translatedPages %}
         <li class="nav-item">
           <a class="nav-link {% if locale[0] == page.lang %}active{% endif %}"
              href="{{site.baseurl}}{{translatedPage.url}}">{{translatedPage.lang | upcase}}</a>
         </li>
         {% endfor %}
-      {% endif %}
+        {% endif %}
 
-      {% endif %}
-    </ul>
+        {% endif %}
+      </ul>
+    </div>
   </div>
 </nav>
 

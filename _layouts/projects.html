@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<div class="mer-projects">
+<div class="mer-projects d-lg-flex flex-wrap">
   {% assign dictionary=site.data.locales[page.lang].dictionary %}
   {% assign projects=site.data.projects %}
 
@@ -12,32 +12,34 @@ layout: page
   {% assign projectPage=translatedPages | where:'ref', project.ref | first %}
 
   {% if projectPage %}
-  <div class="mer-section">
+  {% assign sectionClasses='col-lg-6' %}
+  {% assign descriptionClasses='col-12' %}
+
+  {% if project.image %}
+  {% assign sectionClasses='col-lg-12' %}
+  {% assign descriptionClasses='col-sm-6 col-md-7 col-xl-6' %}
+  {% endif %}
+
+  <div class="mer-section {{sectionClasses}}">
     {% assign projectTags=projectPage.tags %}
 
-    {% assign descriptionClasses='col-12' %}
-
-    {% if project.image %}
-    {% assign descriptionClasses='col-sm-8 col-md-7' %}
-    {% endif %}
-
-    <div class="row">
-      <h2 class="col-12 mb-2 order-2 order-sm-1">
+    <div class="row h-100">
+      <h2 class="col-12 order-2 order-sm-1">
         <a href="{{site.baseurl}}{{projectPage.url}}">{{projectPage.title}}</a>
       </h2>
 
       {% if project.image %}
-      <div class="col-sm-4 col-md-5 order-1 order-sm-3 mer-projects-image">
+      <div class="col-sm-6 col-md-5 col-xl-6 order-1 order-sm-3 mer-projects-image">
         <a href="{{site.baseurl}}{{projectPage.url}}">
-          <img class="mer-img mer-shadedFrame p-2 mb-2"
+          <img class="mer-img mer-shadedFrame p-2 mb-4 mb-sm-0"
                src="{{site.baseurl}}{{project.image.url}}"
                alt="{{project.image.alt}}">
         </a>
       </div>
       {% endif %}
 
-      <div class="{{descriptionClasses}} order-3 order-sm-2 mer-projects-description">
-        <div class="mb-2">
+      <div class="{{descriptionClasses}} order-3 order-sm-2 mer-projects-body">
+        <div class="mer-projects-description mb-3">
           {{projectPage.description | markdownify}}
 
           <a class="d-none d-md-inline-block"
@@ -47,14 +49,14 @@ layout: page
             <a class="mer-link"
                href="{{project.repo}}">
               <i class="mer-icon ion ion-logo-github"></i>
-              {{dictionary.viewOnGitHub}}
+              <span class="mer-label">{{dictionary.viewOnGitHub}}</span>
             </a>
 
             {% if project.npm %}
             <a class="mer-link"
                href="{{project.npm}}">
-              <i class="mer-icon ion ion-logo-nodejs"></i>
-              {{dictionary.viewOnNPM}}
+              <i class="mer-icon ion ion-logo-npm"></i>
+              <span class="mer-label">{{dictionary.viewOnNPM}}</span>
             </a>
             {% endif %}
           </div>

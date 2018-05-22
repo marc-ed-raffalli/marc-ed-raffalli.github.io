@@ -14,6 +14,10 @@
         border: none;
       }
 
+      h2 {
+        margin: $merGap*6 0;
+      }
+
       h3 {
         margin: 0;
       }
@@ -40,7 +44,7 @@
 
     &-work {
       li {
-        margin-bottom: 1rem;
+        margin-bottom: $merGap*4;
       }
 
       & > .row > .mer-list {
@@ -51,6 +55,7 @@
         }
 
         h4 {
+          margin-top: $merGap*4;
           padding-bottom: .4rem;
           border-bottom: 1px #dedede solid;
         }
@@ -62,7 +67,7 @@
 
       .mer-responsibilities {
         margin-top: $merGap*2;
-        padding-left: 1.25rem;
+        padding-left: $merGap*5;
         list-style: circle;
 
         li {
@@ -148,5 +153,11 @@
       }
     }
 
+    &-education {
+      header {
+        font-weight: bold;
+        margin: $merGap*6 0 $merGap*2;
+      }
+    }
   }
 }

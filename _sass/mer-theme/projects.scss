@@ -5,16 +5,26 @@
 
   h2 {
     font-size: 1.2rem;
+    margin-top: 0;
   }
 
-  &-description {
+  &-body {
     font-size: 80%;
 
-    .mer-link {
-      margin-right: $merGap*2;
+    .mer {
+      &-links {
+        display: flex;
+        justify-content: center;
+      }
 
-      .mer-icon {
-        font-size: 1.2rem;
+      &-link {
+        text-align: center;
+        padding: $merGap*2 $merGap*4;
+      }
+
+      &-icon {
+        display: block;
+        font-size: 3rem;
       }
     }
   }
@@ -30,7 +40,7 @@
       font-size: 1.6rem;
     }
 
-    &-description {
+    &-body {
       font-size: 100%;
     }
 
@@ -40,7 +50,24 @@
     }
   }
 
+  @media (min-width: $screen-md) {
+    &-body .mer-icon {
+      font-size: 4rem;
+    }
+  }
   @media (min-width: $screen-lg) {
+    .mer-section .row {
+      width: 100%;
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+
+      .mer-projects-description {
+        flex-grow: 1;
+      }
+    }
     img {
       height: 100%;
     }

@@ -10,7 +10,7 @@ title:        lb-declarative-e2e-test
 description:  Node based declaration driven test generator for Loopback applications.
 
 permalink:    /en/projects/lb-declarative-e2e-test
-tags:         [api, automation, e2e, js, loopback, mocha, node, npm, rest, strongloop, supertest, test]
+tags:         [API, Automation, e2e, js, Loopback, Mocha, Node, NPM, Rest, Strongloop, Supertest, Test]
 ---
 
 [![Build Status](https://travis-ci.org/marc-ed-raffalli/lb-declarative-e2e-test.svg?branch=master)](https://travis-ci.org/marc-ed-raffalli/lb-declarative-e2e-test)
@@ -38,7 +38,6 @@ The test generation logic has been moved to [`declarative-test-structure-generat
 
 A demo example is available on [Github](https://github.com/marc-ed-raffalli/loopback-example-tests).
 
-
 ## Motivations
 
 The main motivation was to reduce the boilerplate code for every e2e tests.
@@ -49,15 +48,11 @@ However, as soon as the request requires authentication, a first post request is
 In the past, I abstracted this logic in separate functions and the complexity increased. 
 Today I hope `lb-declarative-e2e-test` will help reduce the boilerplate code of many developers. 
 
-
 ## Issues
 
 Please share your feedback and report the encountered issues on the [project's issues page](https://github.com/marc-ed-raffalli/lb-declarative-e2e-test/issues).
 
-
-## Usage
-
-### Installation
+## Installation
 
 ```bash
 npm install --save-dev lb-declarative-e2e-test
@@ -66,7 +61,7 @@ npm install --save-dev lb-declarative-e2e-test
 npm i -D lb-declarative-e2e-test
 ```
 
-### Basics
+## Basics
 
 ```js
 const lbe2e = require('lb-declarative-e2e-test');
@@ -103,9 +98,9 @@ This code defines a test suite `Read access` and two test cases
 
 From here, read the [test suite definition](#test-suite-definition) and the [test definition](#test-definition).
 
-### Definitions
+## Definitions
 
-#### Test suite definition
+### Test suite definition
 
 It extends the definition from 
 [`declarative-test-structure-generator` => test-suite-definition][testGen#testSuiteDefinition], accepts the following:
@@ -124,7 +119,7 @@ It extends the definition from
 
 See the [extended definition][testGen#testSuiteDefinition] for more details.
 
-#### Test definition
+### Test definition
 
 It extends the definition from 
 [`declarative-test-structure-generator` => test-definition][testGen#testDefinition], accepts the following:
@@ -157,22 +152,27 @@ When provided, it will be called with the test error and the request's response 
 
 See the [extended definition][testGen#testDefinition] for more details.
 
-##### Expect
+#### Expect
 
-- The value `{*}` is passed directly to `supertest.expect()`  
-  The value provided can be used to test: 
+- The value `{*}` is passed directly to `supertest.expect()`, it can be used to test: 
   - [HTTP status code](https://github.com/visionmedia/supertest#expectstatus-fn) 
   - [body](https://github.com/visionmedia/supertest#expectbody-fn) 
   - response with a custom [test function](https://github.com/visionmedia/supertest#expectfunctionres-).
+
   ```js
+  // check the HTTP status
   {
     // ...
     expect: 200
   }
+
+  // check the exact value of the body
   {
     // ...
     expect: {foo: 'bar'}
   }
+
+  // callback with response 
   {
     // ...
     expect: response=>{ /* test response */ }
@@ -208,7 +208,7 @@ See the [extended definition][testGen#testDefinition] for more details.
   }
   ```
 
-#### Global config definition
+### Global config definition
 
 All the config below are optional, see how to [specify a global config object](#specify-a-global-config-object).
 
@@ -252,6 +252,9 @@ When provided, it will be called with the test error and the request's response 
 ## Advanced usage
 
 ### Test suites definition structure
+
+The test definition structure is not limited to a single level.
+As in Mocha, there is no limit to the amount of nesting.
 
 See [`declarative-test-structure-generator` => Test suites definition structure][testGen#testSuiteDefinitionStructure]
 

@@ -40,14 +40,14 @@ layout: default
     <h2>{{experience.header}}</h2>
 
     {% for expType in experience.types %}
-    <div class="row no-gutters">
+    <div class="row no-gutters align-items-lg-baseline">
       <div class="col-12 col-lg-4">
         <h3>{{expType.name}}</h3>
       </div>
       <ul class="mer-list col-12 col-lg-8">
         {% for position in expType.positions %}
         <li>
-          <h4>{{position.title}}</h4>
+          <h4 class="mt-3 mt-lg-0">{{position.title}}</h4>
           <p class="mer-secondary">
             <span class="pr-2 font-weight-bold">{{position.organization}}</span>
             <span>{{position.period}}</span>
@@ -113,18 +113,18 @@ layout: default
 
   </section>
 
-  <section class="mer-section">
+  <section class="mer-section mer-education">
     {% assign education=about.education %}
 
     {% for educType in education.types %}
-    <div class="row no-gutters mt-3">
+    <div class="row no-gutters mt-3 align-items-lg-baseline">
       <div class="col-12 col-lg-4">
         <h3>{{educType.name}}</h3>
       </div>
       <ul class="mer-list col-12 col-lg-8">
         {% for achievement in educType.achievements %}
         <li class="mt-2">
-          <h4>{{achievement.title | markdownify}}</h4>
+          <header>{{achievement.title | markdownify}}</header>
           <p class="mer-secondary">{{achievement.location}} - {{achievement.year}}</p>
         </li>
         {% endfor %}

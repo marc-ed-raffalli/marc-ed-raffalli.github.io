@@ -9,7 +9,7 @@ title:        declarative-test-structure-generator
 description:  Node based declaration driven test structure generator.
 
 permalink:    /en/projects/declarative-test-structure-generator
-tags:         [automation, bdd, generator, js, mocha, node, npm, structure, test]
+tags:         [Automation, Bdd, Generator, js, Mocha, Node, Npm, Structure, Test]
 ---
 
 [![Build Status](https://travis-ci.org/marc-ed-raffalli/declarative-test-structure-generator.svg?branch=master)](https://travis-ci.org/marc-ed-raffalli/declarative-test-structure-generator)
@@ -145,6 +145,8 @@ testGen.run(server, {
               }]
             },
             'Test suite lvl 2.0.1': {
+              // each definition is independent
+              // you can set hooks, skip, only... 
               skip: true,
               tests: [{
                 // test definition
