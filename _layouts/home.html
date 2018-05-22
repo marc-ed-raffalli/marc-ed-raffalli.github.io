@@ -58,6 +58,8 @@ layout: default
             <li>{{resp | markdownify}}</li>
             {% endfor %}
           </ul>
+
+          {% include tags.html tags=position.technologies %}
         </li>
         {% endfor %}
       </ul>

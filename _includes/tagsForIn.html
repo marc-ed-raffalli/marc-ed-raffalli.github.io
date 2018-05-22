@@ -1,0 +1,12 @@
+{% for tag in include.tags %}
+
+{% if tag.first %}
+<div>
+{% include tagsForIn.html tags=tag %}
+</div>
+{% else %}
+{% include tag.html tag=tag %}
+
+{% endif %}
+
+{% endfor %}

@@ -4,14 +4,30 @@ experience:
     - name: Professional
       positions:
         - title:  Frontend UI Consultant
+          period: March 2017 - actual
+          organization: DEPT - Kaspersky - Dublin
+          responsibilities:
+            - Implementation and testing of new features on the localized e-commerce sites
+            - Implementation and testing of new UI components
+            - Site layout and feature improvements
+            - Build configuration and improvements
+          technologies:
+            - [AngularJS, Jasmine]
+            - [Babel, NPM, Karma, Gulp]
+
+        - title:  Frontend UI Consultant
           period: Aug 2017 - Dec 2017
           organization: Core Media - Dublin
           responsibilities:
             - Assist in leading the implementation of the product rebranding
+            - Presentation of complex data using charts and data visualisation (AmCharts, D3)
             - Provide advice refactoring current solution to a responsive design
             - Provide UX guidance to achieve simple and coherent design across pages
             - Advise on client side design and architecture
             - Design, implementation and testing of new UI components
+          technologies:
+            - [AngularJS, AmCharts, D3, Bootstrap, Jasmine]
+            - [Webpack, Babel, Karma, NPM]
 
         - title:  Lead UI Developer
           period: Sept 2014 - Aug 2017
@@ -22,6 +38,10 @@ experience:
             - Writing technical articles and videos
             - '*Mentoring* of team’s trainees (3 permanent, 5 interns)'
             - Team and individual *support* through internal forums (~2k msgs) / email / IM
+          technologies:
+            - [Require.js, D3, Leaflet, Moment, Node, Loopback, Express, Socket.io, Mocha, Sinon, Chai, Java SE, JUnit, Powermock]
+            - [Gitlab, Jenkins, ElasticSearch, Apache, Jira, Confluence]
+            - [Webpack, Babel, NPM]
 
         - title:  Frontend Developer
           period: Jul 2013 - Sept 2014
@@ -30,6 +50,8 @@ experience:
             - Implementation and testing of *Ericsson branded UI* components
             - Conduct on-boarding *workshops* online (10+) and f2f (Ireland / India) of new UI teams
             - Scrum Master (6 months)
+          technologies:
+            - [Require.js, D3, Leaflet, JQuery, Backbone, Mocha, Sinon, Chai]
 
         - title:  Trainee Engineer
           period: Jul 2012 - Jul 2013
@@ -41,12 +63,13 @@ experience:
     - name: Volunteering
       positions:
         - title:  Coderdojo Mentor
-          period: 2016-actual
+          period: 2016 - actual
           organization: Coderdojo Athlone
           responsibilities:
             - Introduce programming concepts to kids (4+) and teenagers
             - Develop each individual's confidence and presentation skills
             - Cultivate and develop curiosity in sciences
+            - Web development
 
 skills:
   header: Skills
