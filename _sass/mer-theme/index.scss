@@ -1,20 +1,24 @@
 @import "variables";
 
-.mer-index .mer {
-  &-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  &-item {
-    flex: 1;
+.mer-index {
+  padding: $merGap*4 0;
 
-    a {
-      display: block;
-      font-size: 1.2rem;
-      color: $merFontColor;
+  .mer {
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-item {
+      flex: 1;
 
-      &:hover {
-        text-decoration: none;
+      a {
+        display: block;
+        font-size: 1.2rem;
+        color: $merFontColor;
+
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }

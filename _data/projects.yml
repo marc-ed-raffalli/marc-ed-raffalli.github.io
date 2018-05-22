@@ -1,4 +1,12 @@
 list:
+  - ref:    lb-declarative-e2e-test
+    repo:   https://github.com/marc-ed-raffalli/lb-declarative-e2e-test/
+    npm:    https://www.npmjs.com/package/lb-declarative-e2e-test
+
+  - ref:    declarative-test-structure-generator
+    repo:   https://github.com/marc-ed-raffalli/declarative-test-structure-generator/
+    npm:    https://www.npmjs.com/package/declarative-test-structure-generator
+
   - ref:    geo-game
     repo:   https://github.com/marc-ed-raffalli/geo-game/
     page:   https://marc-ed-raffalli.github.io/geo-game/

@@ -49,6 +49,14 @@ layout: page
               <i class="mer-icon ion ion-logo-github"></i>
               {{dictionary.viewOnGitHub}}
             </a>
+
+            {% if project.npm %}
+            <a class="mer-link"
+               href="{{project.npm}}">
+              <i class="mer-icon ion ion-logo-nodejs"></i>
+              {{dictionary.viewOnNPM}}
+            </a>
+            {% endif %}
           </div>
         </div>
 
