@@ -6,7 +6,7 @@ ref:          declarative-test-structure-generator
 parent:       projects
 title:        declarative-test-structure-generator
 
-description:  Node based declaration driven test structure generator.
+description:  Node based declaration driven test structure generator. Used as dependency and central point for docs.
 
 permalink:    /en/projects/declarative-test-structure-generator
 tags:         [Automation, Bdd, Generator, js, Mocha, Node, Npm, Structure, Test]
@@ -16,7 +16,7 @@ tags:         [Automation, Bdd, Generator, js, Mocha, Node, Npm, Structure, Test
 [![Coverage Status](https://coveralls.io/repos/github/marc-ed-raffalli/declarative-test-structure-generator/badge.svg?branch=master)](https://coveralls.io/github/marc-ed-raffalli/declarative-test-structure-generator?branch=master)
 [![NPM version](https://img.shields.io/npm/v/declarative-test-structure-generator.svg)](https://www.npmjs.com/package/declarative-test-structure-generator)
 
-`declarative-test-structure-generator` allows to write tests in an object definition style.  
+`declarative-test-structure-generator` allows to write tests in an object definition style.
 
 
 ```js
@@ -38,9 +38,7 @@ but also to avoid duplication of the documentation.
 
 This package **is not a replacement** for [Mocha][mocha], just a way to reuse code and documentation between some of my projects.
 
-## Usage
-
-### Installation
+## Installation
 
 ```bash
 npm install --save-dev declarative-test-structure-generator
@@ -49,7 +47,7 @@ npm install --save-dev declarative-test-structure-generator
 npm i -D declarative-test-structure-generator
 ```
 
-### Basics
+## Basics
 
 ```js
 const testGen = require('declarative-test-structure-generator');
@@ -81,9 +79,9 @@ testGen.run({
 The code should be very self explanatory.   
 Read the [test suite definition](#test-suite-definition) and the [test definition](#test-definition) for additional API.
 
-### Definitions
+## Definitions
 
-#### Test suite definition
+### Test suite definition
 
 The test suite definition accepts the following:
 
@@ -103,9 +101,9 @@ The test suite definition accepts the following:
 see [Test suites definition structure](#test-suites-definition-structure) for more details.
 
 **TIP:** It exposes the [Mocha][mocha] API through `skip`, `only`, `before`, `beforeEach`, `after`, `afterEach`,
-see [run only / skip](#run-only-/-skip), [test hooks](#test-hooks) for more details.
+see [run only / skip](#run-only--skip), [test hooks](#test-hooks) for more details.
 
-#### Test definition
+### Test definition
 
 The test definition accepts the following:
 
@@ -118,8 +116,11 @@ The test definition accepts the following:
 }
 ```
 
+- `name`: test name.
+- `test`: test function.
+
 **TIP:** It exposes the [Mocha][mocha] API through `skip`, `only`,
-see [run only / skip](#run-only-/-skip) for more details.
+see [run only / skip](#run-only--skip) for more details.
 
 ## Advanced usage
 

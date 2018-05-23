@@ -33,7 +33,6 @@ tags:         [API, Automation, e2e, js, Loopback, Mocha, Node, NPM, Rest, Stron
 It combines and exposes API from [Mocha][mocha] and [supertest][supertest].  
 The test generation logic has been moved to [`declarative-test-structure-generator`][testGen], check it out for the full API doc.
 
-
 ## Demo
 
 A demo example is available on [Github](https://github.com/marc-ed-raffalli/loopback-example-tests).
@@ -117,7 +116,7 @@ It extends the definition from
 }
 ```
 
-See the [extended definition][testGen#testSuiteDefinition] for more details.
+See the [full test suite definition API][testGen#testSuiteDefinition] for more details.
 
 ### Test definition
 
@@ -129,28 +128,67 @@ It extends the definition from
   name:       {string}
   skip:       {boolean}
   only:       {boolean}
-  auth:       {string | Object | Array[string | Object]}
+  url:        {string | function}
+  verb:       {string}
   headers:    {Object}
-  body:       {function | *}
+  auth:       {string | Object | Array[string | Object] | function}
+  body:       {Object | function | *}
   expect:     {Object | *}
   error:      {function}
 }
 ```
 
+**Example:**
+On the example below, `userModels` can be set during a `before` or `beforeEach` hook.  
+
+```js
+{
+  name: 'user CAN read his OWN details',
+  verb: 'get',
+  url: () => `/api/users/${userModels[0].id}`,
+  auth: () => ({email: userModels[0].email, password: userModels[0].password}),
+  expect: 200
+},
+```  
+
+`name`, `skip` and `only`: see the [full test definition API][testGen#testDefinition] for more details.
+
+#### Url
+
+The tested `url` can be passed as a `string` or as a callback `function` returning a `string`.
+
+The callback value is only evaluated when configuring the request (after `before` / `beforeEach` hooks).
+
+#### Verb
+
+The verb / HTTP method to use for the request.
+
+All verbs supported by [supertest][supertest] are supported, e.g. `get`, `post`, `put`, `patch`, `delete`, ...
+
+#### Headers
+
 The `headers` is an `Object` mapping the key-value pairs. 
 The pairs are merged over the headers in the [global config](#global-config-definition)
 
+#### Auth
+
 The `auth` should be used for authenticated requests.
-The following types are supported:
+Custom login endpoint can be configured in the [global config](#global-config-definition).
+
+The following options are supported:
 - `string`: provides the tokenId to use for the request.
-  It is used directly on the `Authorization` header and the request is sent without prior login. 
-- `Object`: provides the credentials to use for the request (the Object provided is sent as is)
-- `Array[string|Object]`: A combination of the above. 
+  It is used directly on the `Authorization` header and the request is sent without prior login.
+- `Object`: provides the credentials to use for the request (the Object provided is sent as is).
+- `Array[string|Object]`: An array of any of the above. 
+- `function => string|Object|Array[string|Object]`: A callback returning any of the above (lazy evaluated value). 
 
-The `error` is an optional callback.
-When provided, it will be called with the test error and the request's response object. 
+#### Body
 
-See the [extended definition][testGen#testDefinition] for more details.
+- `Object`: an object serialized to JSON before being sent.
+- `function`: a callback returning body.
+- anything supported by [supertest][supertest] (which is based on [superagent][superagent]).
+
+The value or callback value of `body` is passed directly to [supertest `request.send`][supertest].
 
 #### Expect
 
@@ -207,6 +245,13 @@ See the [extended definition][testGen#testDefinition] for more details.
     }
   }
   ```
+
+#### Error
+
+The `error` is an optional callback.
+When provided, it will be called with the test error and the request's response object.
+
+See [Debug a failed test](#debug-a-failed-test) for more details.
 
 ### Global config definition
 
@@ -345,4 +390,5 @@ DEBUG=lb-declarative-e2e-test npm test
 [debug]: https://www.npmjs.com/package/debug
 [loopback]: https://loopback.io/
 [mocha]: https://mochajs.org/
-[supertest]: https://github.com/visionmedia/supertest
+[supertest]: https://github.com/visionmedia/supertest/
+[superagent]: https://visionmedia.github.io/superagent/
