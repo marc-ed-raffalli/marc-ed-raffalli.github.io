@@ -100,11 +100,15 @@
   }
 }
 
-.highlight {
+div.highlight {
   width: 100%;
   padding: $merGap*2;
-  margin-top: $merGap*2;
+  margin: $merGap*4 0;
   border-radius: 4px;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
   overflow: auto;
+
+  pre {
+    margin: 0;
+  }
 }

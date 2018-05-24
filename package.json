@@ -5,7 +5,7 @@
   "scripts": {
     "start": "scripts/serve.sh",
     "install": "scripts/install.sh",
-    "build": "jekyll build"
+    "build": "bundle exec jekyll build"
   },
   "keywords": [],
   "author": "raffalli.marc.ed@hotmail.fr",
