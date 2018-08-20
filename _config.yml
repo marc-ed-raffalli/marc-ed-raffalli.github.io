@@ -22,6 +22,7 @@ menu:
   - ref:  posts
 
 exclude:
+  - .idea
   - Gemfile
   - Gemfile.lock
   - node_modules

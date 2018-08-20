@@ -33,6 +33,10 @@ tags:         [API, Automation, e2e, js, Loopback, Mocha, Node, NPM, Rest, Stron
 It combines and exposes API from [Mocha][mocha] and [supertest][supertest].  
 The test generation logic has been moved to [`declarative-test-structure-generator`][testGen], check it out for the full API doc.
 
+### Latest feature!
+
+The `steps` option was added in the latest release and allows to perform multiple requests in a single test, read [more](#steps)...
+
 ## Demo
 
 A demo example is available on [Github](https://github.com/marc-ed-raffalli/loopback-example-tests).
@@ -246,6 +250,61 @@ The value or callback value of `body` is passed directly to [supertest `request.
   }
   ```
 
+#### Steps
+
+Sometimes it is not easy to test something with only one request.
+The option `steps` allows to perform multiple requests in a single test.
+
+All the options from the test definition are inherited in the step definition.
+On the example below, `auth` is inherited by the steps. 
+
+```js
+{
+  name: 'access token should be voided after logout',
+  auth: () => tokenId,
+  steps: [
+    {
+      url: '/api/users/logout',
+      verb: 'post',
+      expect: 204
+    },
+    {
+      verb: 'get',
+      url: () => `/api/users/${userModels[0].id}`,
+      expect: 401
+    }
+  ]
+}
+```
+
+The step definition can also be lazy evaluated.
+It is particularly useful when a step needs an information from the previous step.
+
+```js
+{
+  name: 'some test with lazy evaluated step definition',
+  steps: [
+    {
+      url: '/api/users/',
+      verb: 'post',
+      body: factory(),
+      expect: 200
+    },
+    step0Response => {
+      return {
+        url: `/api/users/${step0Response.body.id}?filter[include]=scores`,
+        verb: 'get',
+        expect: resp => {
+          expect(resp.body).to.deep.match(expectedBody);
+        }
+      };
+    }
+  ]
+}
+```
+
+*Note: deep match part of [`chai-deep-match`][chaiDeepMatch] plugin.*
+
 #### Error
 
 The `error` is an optional callback.
@@ -388,6 +447,7 @@ DEBUG=lb-declarative-e2e-test npm test
 [testGen#runOnlySkip]: ./declarative-test-structure-generator#run-only--skip
 
 [debug]: https://www.npmjs.com/package/debug
+[chaiDeepMatch]: https://www.npmjs.com/package/chai-deep-match
 [loopback]: https://loopback.io/
 [mocha]: https://mochajs.org/
 [supertest]: https://github.com/visionmedia/supertest/
