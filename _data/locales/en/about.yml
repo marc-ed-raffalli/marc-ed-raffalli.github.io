@@ -3,12 +3,27 @@ experience:
   types:
     - name: Professional
       positions:
+        - title:  Team lead / Frontend UI Consultant
+          period: Oct 2018 - actual
+          organization: Neueda Technologies - Aviva - Athlone
+          responsibilities:
+            - Requirements analysis and design of UI solutions
+            - Implementation and testing of UI solutions
+            - Simplification of complex form structure by leveraging data visualisation (D3)
+            - Team mentoring, knowledge sharing
+            - CI configuration (Circle CI / Azure)
+          technologies:
+            - [React, Redux, D3, Express, Jest, Pupeteer]
+            - [Webpack, Typescript, NPM, Yarn]
+
         - title:  Frontend UI Consultant
-          period: March 2017 - actual
+          period: March 2018 - Sept 2018
           organization: DEPT - Kaspersky - Dublin
           responsibilities:
-            - Implementation and testing of new features on the localized e-commerce sites
+            - 'Implementation and testing of new features on *20+ localized e-commerce sites*'
             - Implementation and testing of new UI components
+            - Implementation of a performant solution to keep dynamic content aligned
+            - 'Reliable integration of Marketo forms styling across *20+ localized e-commerce sites* (rtl, ltr)'
             - Site layout and feature improvements
             - Build configuration and improvements
           technologies:
@@ -69,7 +84,7 @@ experience:
             - Introduce programming concepts to kids (4+) and teenagers
             - Develop each individual's confidence and presentation skills
             - Cultivate and develop curiosity in sciences
-            - Web development
+            - Demonstrate the power of JS from Web development to cloud based applications
 
 skills:
   header: Skills
