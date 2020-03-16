@@ -13,13 +13,11 @@
     {% endif %}
   </div>
 
+  {% unless p.parent %}
+  {% break %}
+  {% endunless %}
+
   {% assign p=translatedSet | where:'ref', p.parent | first %}
 
-  {% if p==nil %}
-  {% break %}
-  {% endif %}
-
   {% endfor %}
-
 </nav>
-
