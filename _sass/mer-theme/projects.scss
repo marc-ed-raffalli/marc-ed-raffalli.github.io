@@ -30,6 +30,8 @@
   }
 
   &-image {
+    text-align: center;
+
     img {
       max-height: 200px;
     }
@@ -46,7 +48,7 @@
 
     img {
       max-height: none;
-      height: 80%;
+      height: auto;
     }
   }
 
@@ -55,6 +57,7 @@
       font-size: 4rem;
     }
   }
+
   @media (min-width: $screen-lg) {
     .mer-section .row {
       width: 100%;
@@ -67,9 +70,6 @@
       .mer-projects-description {
         flex-grow: 1;
       }
-    }
-    img {
-      height: 100%;
     }
   }
 }

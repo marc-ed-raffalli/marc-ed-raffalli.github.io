@@ -7,6 +7,12 @@ list:
     repo:   https://github.com/marc-ed-raffalli/declarative-test-structure-generator/
     npm:    https://www.npmjs.com/package/declarative-test-structure-generator
 
+  - ref:    time-sheet-automation-chrome-extension
+    repo:   https://github.com/marc-ed-raffalli/fill-my-timesheet/
+    image:
+      url:  '/assets/img/projects/fill-my-timesheet/v2-popup.png'
+      alt:  Image for "Fill my timesheet!"
+
   - ref:    geo-game
     repo:   https://github.com/marc-ed-raffalli/geo-game/
     page:   https://marc-ed-raffalli.github.io/geo-game/
