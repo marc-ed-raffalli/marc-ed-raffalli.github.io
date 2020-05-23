@@ -4,6 +4,7 @@ layout: default
 
 {% assign home=site.data.locales[page.lang].home %}
 {% assign about=site.data.locales[page.lang].about %}
+{% assign dictionary=site.data.locales[page.lang].dictionary %}
 
 <div class="mer-home">
 
@@ -11,6 +12,56 @@ layout: default
     {% include greetings.html %}
 
     <div class="mt-3 mer-secondary">{{home.about | markdownify}}</div>
+  </section>
+
+  <section class="mer-section mer-skills">
+    {% assign skills=about.skills %}
+    {% assign logoDir=site.data.logos.config.logoDir %}
+    {% assign logoById=site.data.logos.data %}
+
+    <h2>{{skills.header}}</h2>
+
+    <div class="mb-md-5">
+    {% for language in skills.languages %}
+    <div class="row align-items-center mb-2 mb-md-3">
+      <div class="col-12 col-md-4">{{language.name}}</div>
+      <div class="col-md-1 d-none d-md-block mer-languageLogo">
+        <img src="{{logoDir}}/{{logoById[language.id].path}}"
+             alt="{{language.name}}">
+      </div>
+      <div class="col-12 col-md-7">
+        {% assign value=language.value | times: 20 %}
+
+        {% include bulletChart.html
+        value=value
+        color=language.color
+        %}
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+
+    <div class="mb-md-5">
+    {% for domain in skills.domains %}
+    <div class="row mer-domainRow" title="{{domain.name}}">
+      {% for item in domain.items %}
+      <div class="col-3 col-sm-2 col-lg-1 mer-domainCol">
+        <div class="mer-card"
+             title="{{logoById[item].name}}">
+          <a class="p-2"
+             href="{{logoById[item].site}}"
+             target="_blank">
+            <span class="mer-alignHelper"></span>
+            <img src="{{logoDir}}/{{logoById[item].path}}"
+                 alt="{{logoById[item].name}}"/>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    </div>
+
   </section>
 
   {% assign translatedPages=site.pages | where:'lang', page.lang %}
@@ -53,11 +104,32 @@ layout: default
             <span>{{position.period}}</span>
           </p>
 
+          <h5>{{dictionary.responsibilities}}</h5>
           <ul class="mer-list mer-responsibilities">
             {% for resp in position.responsibilities %}
             <li>{{resp | markdownify}}</li>
             {% endfor %}
           </ul>
+
+          {% if position.achievements %}
+          <h5>{{dictionary.achievements}}</h5>
+          <ul class="mer-list mer-achievements">
+            {% for achievement in position.achievements %}
+            <li>
+              {% if achievement.keyPoints %}
+              {{achievement.description | markdownify}}
+              <ul class="mer-list mer-achievements">
+                {% for point in achievement.keyPoints %}
+                <li>{{point | markdownify}}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              {{achievement | markdownify}}
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
 
           {% include tags.html tags=position.technologies %}
         </li>
@@ -65,52 +137,6 @@ layout: default
       </ul>
     </div>
     {% endfor %}
-  </section>
-
-  <section class="mer-section mer-skills">
-    {% assign skills=about.skills %}
-    {% assign logoDir=site.data.logos.config.logoDir %}
-    {% assign logoById=site.data.logos.data %}
-
-    <h2>{{skills.header}}</h2>
-
-    {% for language in skills.languages %}
-    <div class="row align-items-center mb-2 mb-md-3">
-      <div class="col-12 col-md-4">{{language.name}}</div>
-      <div class="col-md-1 d-none d-md-block mer-languageLogo">
-        <img src="{{logoDir}}/{{logoById[language.id].path}}"
-             alt="{{language.name}}">
-      </div>
-      <div class="col-12 col-md-7">
-        {% assign value=language.value | times: 20 %}
-
-        {% include bulletChart.html
-        value=value
-        color=language.color
-        %}
-      </div>
-    </div>
-    {% endfor %}
-
-    {% for domain in skills.domains %}
-    <div class="row mer-domainRow" title="{{domain.name}}">
-      {% for item in domain.items %}
-      <div class="col-3 col-sm-2 col-lg-1 mer-domainCol">
-        <div class="mer-card"
-             title="{{logoById[item].name}}">
-          <a class="p-2"
-             href="{{logoById[item].site}}"
-             target="_blank">
-            <span class="mer-alignHelper"></span>
-            <img src="{{logoDir}}/{{logoById[item].path}}"
-                 alt="{{logoById[item].name}}"/>
-          </a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% endfor %}
-
   </section>
 
   <section class="mer-section mer-education">

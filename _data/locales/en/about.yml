@@ -3,18 +3,42 @@ experience:
   types:
     - name: Professional
       positions:
-        - title:  Team lead / Frontend UI Consultant
-          period: Oct 2018 - actual
+        - title:  Team lead / UI developer
+          period: Oct 2019 - actual
+          organization: Neueda Technologies - Citi Bank - Exchange Simulator projects
+          responsibilities:
+            - Liaising with customer, business requirements gathering and analysis.
+            - Team coordinator, feature planning, prioritizations and development.
+            - Team member mentoring / code review / feedback.
+            - Lead UI developer, design, implement and maintain UI of 3 applications with high test coverage.
+            - Implement unit / bit level tests as well as e2e using Protractor and Kafka client integration to validate message payload.
+            - Present solutions and redact clear and concise user manuals.
+            - Configure and maintain CI configuration (Circle CI).
+          achievements:
+            - Created a mono-repo infrastructure with optimized Circle CI integration (minimalistic build based on git commit).
+            - Dockerized the applications and set up shared docker-compose files between the applications for development.
+            - Enabled code reuse by creating an Angular library (component/services/models/etc).
+          technologies:
+            - [Angular, Material Angular, Node]
+            - [NG-CLI, Jasmine, Protractor, Typescript, SASS]
+
+        - title:  Team lead / UI developer
+          period: Oct 2018 - Sept 2019
           organization: Neueda Technologies - Aviva - Athlone
           responsibilities:
-            - Requirements analysis and design of UI solutions
-            - Implementation and testing of UI solutions
-            - Simplification of complex form structure by leveraging data visualisation (D3)
-            - Team mentoring, knowledge sharing
-            - CI configuration (Circle CI / Azure)
+            - Liaising with customer, capturing and foster project vision with UI design proposals and implementation of POC
+            - Lead UI developer, design, implement and maintain UI of 2 applications + library with high test coverage.
+            - Experiment UI designs leveraging data visualisations to support complex data entry
+            - Team member mentoring / code review / feedback.
+          achievements:
+            - description: Ensured a successful migration from CRA (Create React App) silos to a mono-repo infrastructure allowing to share code for libraries, test runners and linters
+              keyPoints:
+                - Yarn workspace based infrastructure with single Webpack and Jest configuration
+                - Webpack + Babel + Typescript enabling path aliases, watch mode, lazy loading, tree shaking.
+                - Static code analysis to ensure consistency and good practices
           technologies:
-            - [React, Redux, D3, Express, Jest, Pupeteer]
-            - [Webpack, Typescript, NPM, Yarn]
+            - [React, Redux, D3, Bootstrap grid, Express]
+            - [Jest, React Testing Library, Pupeteer, Cypress, Webpack, Typescript, Yarn, Typescript, SASS]
 
         - title:  Frontend UI Consultant
           period: March 2018 - Sept 2018
@@ -101,6 +125,10 @@ skills:
       name:  JavaScript / ES 6
       value: 5
       color: '#FDC910'
+    - id:    typescript
+      name:  TypeScript
+      value: 5
+      color: '#007acc'
     - id:    java
       name:  Java
       value: 3
@@ -109,10 +137,14 @@ skills:
     - name: Frameworks and libraries
       items:
         - angularjs
+        - angular
+        - apollo-graphql
+        - arangodb
         - backbone
         - bootstrap
         - cordova
         - D3
+        - graphql
         - ionic
         - jquery
         - leaflet
@@ -132,16 +164,23 @@ skills:
       items:
         - babel
         - browserify
+        - circleci
+        - eslint
         - gulp
         - jenkins
         - npm
+        - typescript
         - webpack
+        - yarn
     - name: Testing
       items:
+        - jasmine
+        - jest
         - mocha
         - chai
         - sinon
-        - jasmine
+        - react-testing-library
+        - cypress
         - protractor
         - junit
         - powermock
