@@ -53,28 +53,7 @@
   }
 
   function loadIndex(locale) {
-
-    function redirectTimeout(timeout, locale) {
-      var countdownRedirectElt = getElt('.mer-redirectCountdown');
-
-      getElt('.mer-redirectLabel').textContent = 'Redirecting in';
-
-      countdownRedirectElt.textContent = timeout;
-
-      setInterval(function () {
-        timeout--;
-
-        countdownRedirectElt.textContent = timeout;
-
-        if (timeout <= 0) {
-          window.location.href = locale;
-        }
-      }, 1000);
-    }
-
-    getElt('.mer-js-alert').style.display = 'none';
-
-    redirectTimeout(5, locale);
+    window.location.href = locale;
   }
 
   function loadDefaults() {
