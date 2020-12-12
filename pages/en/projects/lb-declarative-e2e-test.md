@@ -17,6 +17,12 @@ tags:         [API, Automation, e2e, js, Loopback, Mocha, Node, NPM, Rest, Stron
 [![Coverage Status](https://coveralls.io/repos/github/marc-ed-raffalli/lb-declarative-e2e-test/badge.svg?branch=master)](https://coveralls.io/github/marc-ed-raffalli/lb-declarative-e2e-test?branch=master)
 [![NPM version](https://img.shields.io/npm/v/lb-declarative-e2e-test.svg)](https://www.npmjs.com/package/lb-declarative-e2e-test)
 
+
+<div class="mer-js-alert alert alert-warning" role="alert">
+  This page refers to an out of date package, see <a href="./declarative-e2e-test">latest version</a>.
+</div>
+
+
 `lb-declarative-e2e-test` allows to write tests for [Loopback.io][loopback] in a object definition style.
 
 ```js
@@ -30,7 +36,7 @@ tags:         [API, Automation, e2e, js, Loopback, Mocha, Node, NPM, Rest, Stron
 }
 ```
 
-It combines and exposes API from [Mocha][mocha] and [supertest][supertest].  
+It combines and exposes API from [Mocha][mocha] and [supertest][supertest].
 The test generation logic has been moved to [`declarative-test-structure-generator`][testGen], check it out for the full API doc.
 
 ### Latest feature!
@@ -48,8 +54,8 @@ The main motivation was to reduce the boilerplate code for every e2e tests.
 In the case of a simple GET request, the test is very concise.
 However, as soon as the request requires authentication, a first post request is required.
 
-In the past, I abstracted this logic in separate functions and the complexity increased. 
-Today I hope `lb-declarative-e2e-test` will help reduce the boilerplate code of many developers. 
+In the past, I abstracted this logic in separate functions and the complexity increased.
+Today I hope `lb-declarative-e2e-test` will help reduce the boilerplate code of many developers.
 
 ## Issues
 
@@ -92,12 +98,12 @@ lbe2e(server, {
 });
 ```
 
-This code defines a test suite `Read access` and two test cases 
-- `unauthenticated CANNOT read`  
-  Sends an anonymous `GET` request and tests the response status is `401` 
-- `admin CAN read data`  
+This code defines a test suite `Read access` and two test cases
+- `unauthenticated CANNOT read`
+  Sends an anonymous `GET` request and tests the response status is `401`
+- `admin CAN read data`
   Sends a first requests to the default login endpoint to authenticate the user.
-  Then sends an authenticated `GET` request and tests the response status is `200` 
+  Then sends an authenticated `GET` request and tests the response status is `200`
 
 From here, read the [test suite definition](#test-suite-definition) and the [test definition](#test-definition).
 
@@ -105,7 +111,7 @@ From here, read the [test suite definition](#test-suite-definition) and the [tes
 
 ### Test suite definition
 
-It extends the definition from 
+It extends the definition from
 [`declarative-test-structure-generator` => test-suite-definition][testGen#testSuiteDefinition], accepts the following:
 
 ```text
@@ -124,7 +130,7 @@ See the [full test suite definition API][testGen#testSuiteDefinition] for more d
 
 ### Test definition
 
-It extends the definition from 
+It extends the definition from
 [`declarative-test-structure-generator` => test-definition][testGen#testDefinition], accepts the following:
 
 ```text
@@ -143,7 +149,7 @@ It extends the definition from
 ```
 
 **Example:**
-On the example below, `userModels` can be set during a `before` or `beforeEach` hook.  
+On the example below, `userModels` can be set during a `before` or `beforeEach` hook.
 
 ```js
 {
@@ -153,7 +159,7 @@ On the example below, `userModels` can be set during a `before` or `beforeEach` 
   auth: () => ({email: userModels[0].email, password: userModels[0].password}),
   expect: 200
 },
-```  
+```
 
 `name`, `skip` and `only`: see the [full test definition API][testGen#testDefinition] for more details.
 
@@ -171,7 +177,7 @@ All verbs supported by [supertest][supertest] are supported, e.g. `get`, `post`,
 
 #### Headers
 
-The `headers` is an `Object` mapping the key-value pairs. 
+The `headers` is an `Object` mapping the key-value pairs.
 The pairs are merged over the headers in the [global config](#global-config-definition)
 
 #### Auth
@@ -183,8 +189,8 @@ The following options are supported:
 - `string`: provides the tokenId to use for the request.
   It is used directly on the `Authorization` header and the request is sent without prior login.
 - `Object`: provides the credentials to use for the request (the Object provided is sent as is).
-- `Array[string|Object]`: An array of any of the above. 
-- `function => string|Object|Array[string|Object]`: A callback returning any of the above (lazy evaluated value). 
+- `Array[string|Object]`: An array of any of the above.
+- `function => string|Object|Array[string|Object]`: A callback returning any of the above (lazy evaluated value).
 
 #### Body
 
@@ -196,9 +202,9 @@ The value or callback value of `body` is passed directly to [supertest `request.
 
 #### Expect
 
-- The value `{*}` is passed directly to `supertest.expect()`, it can be used to test: 
-  - [HTTP status code](https://github.com/visionmedia/supertest#expectstatus-fn) 
-  - [body](https://github.com/visionmedia/supertest#expectbody-fn) 
+- The value `{*}` is passed directly to `supertest.expect()`, it can be used to test:
+  - [HTTP status code](https://github.com/visionmedia/supertest#expectstatus-fn)
+  - [body](https://github.com/visionmedia/supertest#expectbody-fn)
   - response with a custom [test function](https://github.com/visionmedia/supertest#expectfunctionres-).
 
   ```js
@@ -214,14 +220,14 @@ The value or callback value of `body` is passed directly to [supertest `request.
     expect: {foo: 'bar'}
   }
 
-  // callback with response 
+  // callback with response
   {
     // ...
     expect: response=>{ /* test response */ }
   }
   ```
 
-- Combine multiple tests in one.  
+- Combine multiple tests in one.
   Each key-value pairs in `expect.headers` and `expect.body` are passed to `supertest.expect()`
   ```js
   {
@@ -233,19 +239,19 @@ The value or callback value of `body` is passed directly to [supertest `request.
       },
       body: {
         foo: 'bar'
-      }     
+      }
     }
   }
-  ```  
+  ```
   **Note:** `status` and `Status-Code` are passed without the key to `supertest.expect(value)`
 
-- Lazy evaluation for `expect.body`.  
+- Lazy evaluation for `expect.body`.
   Only evaluates the value when performing the test
   ```js
   {
     // ...
     expect: {
-      body: () => ({foo: 'bar'})     
+      body: () => ({foo: 'bar'})
     }
   }
   ```
@@ -256,7 +262,7 @@ Sometimes it is not easy to test something with only one request.
 The option `steps` allows to perform multiple requests in a single test.
 
 All the options from the test definition are inherited in the step definition.
-On the example below, `auth` is inherited by the steps. 
+On the example below, `auth` is inherited by the steps.
 
 ```js
 {
@@ -343,7 +349,7 @@ The `baseUrl` is prepended to the test `url`.
 The `headers` is merged with the `headers` defined in the [test definition](#test-definition).
 The test definition `headers` takes precedence over the global config `headers`.
 
-The `auth.url` configures the login endpoint for the authenticated requests, defaults to `/api/users/login`. 
+The `auth.url` configures the login endpoint for the authenticated requests, defaults to `/api/users/login`.
 
 **IMPORTANT:** `auth.url` should be specified when the LB app extends the built-in `User` model.
 
@@ -351,7 +357,7 @@ The `expect.headers` is merged with the `expect.headers` defined in the [test de
 The test definition `expect.headers` takes precedence over the global config `expect.headers`.
 
 The `error` is an optional callback, here it is configured for all tests.
-When provided, it will be called with the test error and the request's response object. 
+When provided, it will be called with the test error and the request's response object.
 
 ## Advanced usage
 
@@ -363,7 +369,7 @@ As in Mocha, there is no limit to the amount of nesting.
 See [`declarative-test-structure-generator` => Test suites definition structure][testGen#testSuiteDefinitionStructure]
 
 ### Specify a global config object
- 
+
 `lbe2e` accepts 2 or 3 arguments:
 
 ```js
@@ -375,10 +381,10 @@ lbe2e(server, testConfig, testsSuite);
 
 ### Test hooks
 
-It is possible to run one or many function at different phase of the test.  
+It is possible to run one or many function at different phase of the test.
 See [`declarative-test-structure-generator` => Test hooks][testGen#hooks]
 
-**TIP:** Use the hook feature when you need to set some test data before the tests.  
+**TIP:** Use the hook feature when you need to set some test data before the tests.
 See [Mocha: Asynchronous hooks](https://mochajs.org/#asynchronous-hooks)
 
 ### Run only / skip
