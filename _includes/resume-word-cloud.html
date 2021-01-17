@@ -1,0 +1,43 @@
+{% assign dictionary=site.data.dictionary %}
+{% assign techById=site.data.technologies.data %}
+{% assign resume=site.data.resume %}
+{% assign sideProjects=site.data.projects %}
+
+<div class="mer-cloud">
+  {% assign allProjects = '' | split: '' %}
+
+  {% for project in sideProjects.list %}
+  {% assign projectPage=site.pages | where:'ref', project.ref | first %}
+  {% assign projectDetails = '' | split: '' %}
+
+  {% capture projectTechs %}{% include fn-get-tech.html list=project.technologies %}{% endcapture %}
+  {% assign projectTechs = projectTechs | strip_newlines | split: ',' %}
+
+  {% assign projectDetails = projectDetails | push: projectPage.title %}
+  {% assign projectDetails = projectDetails | push: projectTechs %}
+  {% assign allProjects = allProjects | push: projectDetails %}
+  {% endfor %}
+
+  {% for contract in resume.experience.professional %}
+
+  {% for project in contract.projects %}
+  {% assign projectDetails = '' | split: '' %}
+  {% assign projectAllTechs = '' | split: '' %}
+
+  {% for techStackGroup in project.technologies %}
+  {% capture tmpTechs %}{% include fn-get-tech.html list=techStackGroup %}{% endcapture %}
+  {% assign tmpTechs = tmpTechs | strip_newlines | split: ',' %}
+  {% assign projectAllTechs = projectAllTechs | push: tmpTechs %}
+  {% endfor %}
+
+  {% assign projectDetails = projectDetails | push: project.name %}
+  {% assign projectDetails = projectDetails | push: projectAllTechs %}
+
+  {% assign allProjects = allProjects | push: projectDetails %}
+  {% endfor %}
+
+  {% endfor %}
+  <script>
+    window.__allProjects = {{allProjects | jsonify}}
+  </script>
+</div>

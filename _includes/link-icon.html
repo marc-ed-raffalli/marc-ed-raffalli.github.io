@@ -1,0 +1,12 @@
+<a href="{{include.href}}" title="{{include.label}}" class="text-decoration-none text-center text-dark">
+  {% case include.icon %}
+  {% when 'globe' %}
+  {% include icon-globe.html %}
+  {% else %}
+  <i class="mer-icon {{include.icon}}"></i>
+  {% endcase %}
+
+  {% if include.showLabel %}
+  <span class="d-block small text-secondary pt-1">{{include.label}}</span>
+  {% endif %}
+</a>

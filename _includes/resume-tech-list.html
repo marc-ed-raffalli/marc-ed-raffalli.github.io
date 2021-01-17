@@ -1,0 +1,18 @@
+{% assign techLogoDir=site.data.technologies.config.path %}
+{% assign techById=site.data.technologies.data %}
+
+<ul class="mer-tags">
+  {% for techGroup in include.technologies %}
+  <li>
+    {% for techName in techGroup %}
+    <span class="mer-tag">
+      {% if techById[techName] %}
+      {{techById[techName].name}}
+      {% else %}
+      {{techName}}
+      {% endif %}
+    </span>{% unless forloop.last == true %}, {% endunless %}
+    {% endfor %}
+  </li>
+  {% endfor %}
+</ul>

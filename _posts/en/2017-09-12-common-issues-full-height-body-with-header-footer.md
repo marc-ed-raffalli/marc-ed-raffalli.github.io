@@ -2,10 +2,12 @@
 layout:       topic
 lang:         en
 parent:       post-common-issues
+ref:          post-common-issues-full-height-header-footer
 title:        Full height body with header / footer
-description:  This tutorial covers different aspects to address when creating a layout composed of 
+description:  This tutorial covers different aspects to address when creating a layout composed of
               a header, footer at the bottom and body taking the full available height.
 date:         2017-09-12
+hasCodeBlock: true
 tags:         [tutorials, frontend, css]
 keywords:     [
 absolute,
@@ -50,19 +52,19 @@ There could be many challenges to address and different ways to address them:
 
 - full height body
 - text overflowing in header / footer:
-  - force one line and show `...` 
+  - force one line and show `...`
   - allow text to go on a new line
 
 ```
  ___________     ___________
 | header... |   | multiline |
 |-----------|   | header    |
-| multiline |   |-----------|                    
-| body      |   | multiline |                    
-|           |   | body      |                    
-|           |   |-----------|                    
-|-----------|   | multiline |                    
-| footer... |   | footer    |                    
+| multiline |   |-----------|
+| body      |   | multiline |
+|           |   | body      |
+|           |   |-----------|
+|-----------|   | multiline |
+| footer... |   | footer    |
 |___________|   |___________|
 ```
 
@@ -90,7 +92,7 @@ overflow: hidden;
 
 Then, `text-overflow`
 - `ellipsis` to show `...` at the end of the line.
-- `clip` cut the text overflowing 
+- `clip` cut the text overflowing
 
 **Multiple line**
 
@@ -131,7 +133,7 @@ Assuming the height of the header and footer is 50px, a common way to style it c
 ```css
 .column-body {
     position: absolute;
-    top: 50px;      
+    top: 50px;
     bottom: 50px;
 }
 

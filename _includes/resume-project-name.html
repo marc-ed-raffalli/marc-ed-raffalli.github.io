@@ -1,0 +1,14 @@
+{% assign companyLogoDir=site.data.companies.config.path %}
+{% assign companyLogoById=site.data.companies.data %}
+
+<header class="mer-project-header mer-split_labelLogo">
+  <div class="mer-label">
+    <h5>{{include.project.name}}</h5>
+    <div class="mer-client">{{companyLogoById[include.project.client].name}}</div>
+    <div class="mer-period">{{include.project.period}}</div>
+  </div>
+  <div class="mer-logo">
+    <img src="{{companyLogoDir}}/{{companyLogoById[include.project.client].path}}"
+         alt="{{companyLogoById[include.project.client].name}}"/>
+  </div>
+</header>

@@ -2,23 +2,79 @@
 layout: default
 ---
 
-<div class="mer-index container">
-  <div class="mer-js-alert alert alert-warning" role="alert">
-    <strong>Warning!</strong>
-    JavaScript seems to be disabled in your web browser, some features or content may not work properly.
-  </div>
+{% assign dictionary=site.data.dictionary %}
+{% assign resume=site.data.resume %}
 
-  <p>The site is available in the following languages:</p>
+<main class="mer-page mer-grid">
 
-  <hr>
+  <section class="mer-intro">
+    <h1 class="display-1">{{resume.intro.header}}</h1>
+    <p class="lead fst-italic">{{resume.intro.subHeader}}</p>
 
-  <div class="mer-list">
-    {% for lang in site.data.locales %}
-    <div class="mer-item m-2">
-      <a class="p-3 bg-light" href="{{site.baseurl}}/{{lang[0]}}/">
-        <span class="title">{{lang[1].dictionary.name}}</span>
-      </a>
+    {{resume.intro.message | markdownify}}
+  </section>
+
+  <div class="mer-social">
+    {% include resume-links.html %}
+
+    <div class="mer-picture">
+      <img src="/assets/images/profile.jpg" class="img-fluid" alt="profile picture"/>
     </div>
-    {% endfor %}
   </div>
-</div>
+
+  {% include resume-skills.html %}
+  {% include resume-word-cloud.html %}
+
+  <section class="mer-projects">
+    {% assign projectListPage=site.pages | where:'ref', 'projects' | first %}
+    {% assign projects=site.data.projects %}
+
+    <h2>{{projectListPage.title}}</h2>
+
+    <ul class="list-unstyled">
+      {% for project in projects.list %}
+      {% assign projectPage=site.pages | where:'ref', project.ref | first %}
+      <li class="d-flex">
+        <div class="flex-grow-1">
+          <a href="{{site.baseurl}}{{projectPage.url}}">{{projectPage.title}}</a>
+          <p class="m-0 small text-secondary">{{projectPage.description | split: '.' | first}}</p>
+        </div>
+        <div class="d-flex ps-3 align-self-center">
+          {% if project.npm %}
+          <div class="pe-3">
+            {% include link-icon.html label=dictionary.viewOnNPM icon='npm' href=project.npm %}
+          </div>
+          {% endif %}
+          <div>
+            {% include link-icon.html label=dictionary.viewOnGitHub icon='github' href=project.repo %}
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+      <li class="d-flex align-items-center justify-content-end border-0">
+        {% include page-read-more-link.html url=projectListPage.url more=dictionary.viewAllProjects %}
+      </li>
+    </ul>
+  </section>
+
+  <section class="mer-posts">
+    {% assign topLevelPosts=site.posts | where:'parent', 'posts' %}
+    {% assign postListPage=site.pages | where:'ref', 'posts' | first %}
+
+    <h2>{{postListPage.title}}</h2>
+
+    <ul class="list-unstyled">
+      {% for post in topLevelPosts %}
+      {% assign postPage=site.posts | where:'ref', post.ref | first %}
+      <li>
+        <a href="{{site.baseurl}}{{postPage.url}}">{{postPage.title}}</a>
+        <p class="m-0 small text-secondary">{{postPage.description | split: '.' | first}}</p>
+      </li>
+      {% endfor %}
+      <li class="d-flex align-items-center justify-content-end border-0">
+        {% include page-read-more-link.html url=postListPage.url more=dictionary.viewAllPosts %}
+      </li>
+    </ul>
+  </section>
+
+</main>

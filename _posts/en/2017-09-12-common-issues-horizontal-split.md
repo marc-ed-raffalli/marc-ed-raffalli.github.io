@@ -2,9 +2,11 @@
 layout:       topic
 lang:         en
 parent:       post-common-issues
+ref:          post-common-issues-horizontal-split
 title:        Horizontal split
 description:  This tutorial explains the reason why two element width 50% may not always render as we think (side by side).
 date:         2017-09-12
+hasCodeBlock: true
 tags:         [tutorials, frontend, css]
 keywords:     [
 absolute,
@@ -60,16 +62,16 @@ What is most likely to happen is the two elements will be on a separate line.
         <div style="display: inline-block; width: 50%">
             <p>Left side</p>
 <pre>
-display: inline-block; 
+display: inline-block;
 width: 50%;
 </pre>
         </div>
         <div style="display: inline-block; width: 50%">
             <p>Right side</p>
 <pre>
-display: inline-block; 
+display: inline-block;
 width: 50%;
-</pre>        
+</pre>
         </div>
     </div>
 </div>
@@ -84,12 +86,12 @@ While it is **crucial** to keep your code clean and easy to read, it introduces 
 ### Don't use magic numbers
 
 Many people would be tempted to slightly reduce the width of the elements until both elements align correctly.
-Reducing the width compensates the additional width taken by the white space. 
+Reducing the width compensates the additional width taken by the white space.
 
 ```css
 .split-50{
     /* /!\ magic numbers are a trap */
-    width: 49%; 
+    width: 49%;
 }
 ```
 
@@ -99,23 +101,23 @@ Although it offers quick results, reducing the size of the screen or changing th
 
 It is not appropriate because the width taken by the white space is constant.
 The width taken by 1% varies in function of the width of the parent element.
-Removing 1% or 2% will be enough on big screens, but not for small ones.  
+Removing 1% or 2% will be enough on big screens, but not for small ones.
 
 <div class="mer-resizable">
     <div>
         <div style="display: inline-block; width: 49%">
             <p>Left side</p>
 <pre>
-display: inline-block; 
+display: inline-block;
 width: 49%;
 </pre>
         </div>
         <div style="display: inline-block; width: 49%">
             <p>Right side</p>
 <pre>
-display: inline-block; 
+display: inline-block;
 width: 49%;
-</pre>        
+</pre>
         </div>
     </div>
 </div>
@@ -167,7 +169,7 @@ Elements positioned absolutely cannot do that.
         <div style="position: absolute; top:40px; left: 0; width: 50%">
             <p>Left side</p>
 <pre>
-position: absolute; 
+position: absolute;
 top:40px;
 left:0;
 width: 50%;
@@ -180,8 +182,8 @@ width: 50%;
         <div style="position: absolute; top:40px; right: 0; width: 50%">
             <p>Right side</p>
 <pre>
-position: absolute; 
-top:40px; 
+position: absolute;
+top:40px;
 right: 0;
 width: 50%;
 </pre>
@@ -224,10 +226,10 @@ Finishing with a side joke, "For life as for layouts, not everything is absolute
 ```
 
 `white-space: nowrap;` allows to force the browser not to wrap on a new line when a white space is present.
-When you set it on an element, you will need to reset the default behavior on its children. 
+When you set it on an element, you will need to reset the default behavior on its children.
 
 While so far it is the less of many evils, it is still not perfect.
-You can see on the example below the gap caused by the white space as well as the content hidden on the right edge. 
+You can see on the example below the gap caused by the white space as well as the content hidden on the right edge.
 
 <div class="mer-resizable" style="height: 250px">
     <div style="white-space: nowrap; background-color: red;">
@@ -239,7 +241,7 @@ You can see on the example below the gap caused by the white space as well as th
 <pre>
 display: inline-block;
 width: 50%;
-white-space: normal; 
+white-space: normal;
 background-color: #ccc;
 </pre>
         </div>
@@ -251,7 +253,7 @@ background-color: #ccc;
 <pre>
 display: inline-block;
 width: 50%;
-white-space: normal; 
+white-space: normal;
 background-color: #ccc;
 </pre>
         </div>
@@ -261,7 +263,7 @@ background-color: #ccc;
 
 ### Don't hack the font-size
 
-In the rare case your browser does not support `display: flex`,  
+In the rare case your browser does not support `display: flex`,
 this solution could be the simplest and the least prone to side issues.
 However, following [Caniuse#Flexbox](http://caniuse.com/#feat=flexbox);
 it should be supported by over 90% of the devices.
@@ -291,7 +293,7 @@ Then reset the font-size on the children elements.
 ### Flex boxes
 
 The flex boxes are very handy in many situations.
-In this case, they can be used in the following way to solve the issue: 
+In this case, they can be used in the following way to solve the issue:
 
 ```css
 .container {

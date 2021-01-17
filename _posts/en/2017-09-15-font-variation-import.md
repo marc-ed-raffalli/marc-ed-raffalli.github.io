@@ -6,6 +6,8 @@ parent:       posts
 title:        '@font-face and font variations'
 description:  This tutorial explains the basics of @font-face and how to import multiple variation of a single font-family.
 date:         2017-09-15
+hasCodeBlock: true
+hasCustomCss: posts/font-face-and-font-variations.css
 tags:         [tutorials, frontend, css]
 keywords:     [
 advice,
@@ -30,9 +32,9 @@ woff2
 ]
 ---
 
-So you browsed the web and found a really nice font set to add to your web page and you might wonder: 
+So you browsed the web and found a really nice font set to add to your web page and you might wonder:
 
-> How can I import all the variations of a single font family into my project?   
+> How can I import all the variations of a single font family into my project?
 
 If it is indeed the case, you will find the answer below!
 Else you can still wander around :)
@@ -88,10 +90,10 @@ p {
 }
 ```
 
-*Notes:* 
+*Notes:*
 As obvious as it seems, `YourSuperFont`, `theStyle` and `theWeight` are not proper values ;)
 
-The support for font types varies with older browsers, see support for  
+The support for font types varies with older browsers, see support for
 [Woff2](http://caniuse.com/#search=woff2),
 [Woff](http://caniuse.com/#search=woff).
 
@@ -127,7 +129,7 @@ It becomes very tedious to write the `@font-face` for all variations.
 
 One way to overcome the issue is to get the font from a service like
 [Google Fonts](https://fonts.google.com/).
-Using a compiler for CSS will help to reduce the tedious part of CSS... tremendously.   
+Using a compiler for CSS will help to reduce the tedious part of CSS... tremendously.
 
 ### DRY
 
@@ -138,8 +140,8 @@ Hmmm, not exactly no. Although yes, it's definitely colder these days :D
 In the case it is the first time you see it, DRY stands for **D**on't **R**epeat **Y**ourself.
 Easier to say than to do in this case and for CSS in general.
 
-If you want to reduce the repetition aspect of CSS, you could use a language like [Sass](http://sass-lang.com) 
-which allows `mixin` (a kind of function to generate CSS). 
+If you want to reduce the repetition aspect of CSS, you could use a language like [Sass](http://sass-lang.com)
+which allows `mixin` (a kind of function to generate CSS).
 Your stylesheet would then need to be compiled in order to be used in the HTML page.
 
 Here's a quick mixin implementation to import the font:
@@ -162,14 +164,14 @@ Here's a quick mixin implementation to import the font:
 
 In the example above, the mixin receives the `font-family`, font file path and format, `font-style` and `font-weight`.
 `font-style` and `font-weight` are left as last parameters as they have default values (Sass specification).
-The repetition are reduced but we can do even better, see 
+The repetition are reduced but we can do even better, see
 [SASS Font-face]({{site.baseurl}}{% post_url /en/2017-10-14-sass-font-face %})
 post for more details.
 
 ### Demo
 
-This demo uses the mixin presented in the 
-[SASS Font-face]({{site.baseurl}}{% post_url /en/2017-10-14-sass-font-face %}) post to import the font 
+This demo uses the mixin presented in the
+[SASS Font-face]({{site.baseurl}}{% post_url /en/2017-10-14-sass-font-face %}) post to import the font
 [Montserrat](https://fonts.google.com/specimen/Montserrat) and its 18 styles!
 
 

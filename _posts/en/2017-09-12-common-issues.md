@@ -5,8 +5,9 @@ ref:         post-common-issues
 parent:      posts
 title:       CSS Common issues and the ways to get around them
 description: This page lists a series of short and focused tutorials based from concrete CSS examples.
-             It shows the way some common challenges can be tackled as well as what are the pitfalls to avoid and why. 
+             It shows the way some common challenges can be tackled as well as what are the pitfalls to avoid and why.
 date:        2017-09-12
+hasCodeBlock: true
 tags:        [tutorials, frontend, css]
 keywords:    [
 advice,
@@ -39,7 +40,7 @@ Coderdojo web apprentice and anybody interested in web development, with the bas
 
 **Objective**
 
-Cover a series of common pitfalls and their remedies. 
+Cover a series of common pitfalls and their remedies.
 
 **Targeted / tested browsers**
 
@@ -114,7 +115,7 @@ There could be many challenges to address and different ways to address them:
 
 - full height body
 - text overflowing in header / footer:
-  - force one line and show `...` 
+  - force one line and show `...`
   - allow text to go on a new line
 
 [See how to solve these challenges](./common-issues-full-height-body-with-header-footer.html)

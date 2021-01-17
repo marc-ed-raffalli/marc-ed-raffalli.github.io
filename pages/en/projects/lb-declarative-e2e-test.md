@@ -1,21 +1,17 @@
 ---
 layout:       topic
 lang:         en
-
 ref:          lb-declarative-e2e-test
 parent:       projects
+permalink:    /en/projects/lb-declarative-e2e-test
+hasCodeBlock: true
 
 title:        lb-declarative-e2e-test
-
 description:  Node based declaration driven test generator for Loopback applications.
-
-permalink:    /en/projects/lb-declarative-e2e-test
 tags:         [API, Automation, e2e, js, Loopback, Mocha, Node, NPM, Rest, Strongloop, Supertest, Test]
 ---
 
-[![Build Status](https://travis-ci.org/marc-ed-raffalli/lb-declarative-e2e-test.svg?branch=master)](https://travis-ci.org/marc-ed-raffalli/lb-declarative-e2e-test)
-[![Coverage Status](https://coveralls.io/repos/github/marc-ed-raffalli/lb-declarative-e2e-test/badge.svg?branch=master)](https://coveralls.io/github/marc-ed-raffalli/lb-declarative-e2e-test?branch=master)
-[![NPM version](https://img.shields.io/npm/v/lb-declarative-e2e-test.svg)](https://www.npmjs.com/package/lb-declarative-e2e-test)
+{% include project-tags.html ref=page.ref %}
 
 
 <div class="mer-js-alert alert alert-warning" role="alert">

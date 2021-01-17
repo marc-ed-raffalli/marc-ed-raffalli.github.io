@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+{% assign dictionary=site.data.dictionary %}
+{% assign resume=site.data.resume %}
+
+{% include nav.html %}
+<main class="mer-page mer-grid mt-3">
+
+  <h1 class="display-1">{{site.author_name}}</h1>
+
+  <section class="mer-intro">
+    <p class="fs-4">{{resume.title}}</p>
+    {{resume.intro.message | markdownify}}
+  </section>
+
+  {% include resume-links.html %}
+  {% include resume-skills.html %}
+
+  <section class="mer-experience">
+    <h2>{{dictionary.workExperience}}</h2>
+
+    {% for contract in resume.experience.professional %}
+    <ul class="mer-contracts">
+      <li>
+        <header class="mer-contract-header">
+          <h3 class="mer-contract-title">{{contract.title}}</h3>
+          <div class="mer-contract-organization">
+            {% include resume-company.html company=contract.organization %}
+          </div>
+          <div class="mer-contract-location">{{contract.location}}</div>
+        </header>
+
+        <h4>{{dictionary.projects}}</h4>
+        <ul class="mer-projects">
+          {% for project in contract.projects %}
+          <li class="mer-project">
+            {% include resume-project-name.html project=project %}
+
+            {% include resume-tech-list.html technologies=project.technologies %}
+
+            <section class="mer-project-details {% if project.showcase %}withShowcase{% endif %}">
+              <div>
+                <h6>{{dictionary.responsibilities}}</h6>
+                <ul>
+                  {% for responsibility in project.responsibilities %}
+                  <li>{{responsibility | markdownify}}</li>
+                  {% endfor %}
+                </ul>
+
+                {% if project.achievements %}
+                <h6>{{dictionary.achievements}}</h6>
+                {% include resume-achievements.html achievements=project.achievements %}
+                {% endif %}
+              </div>
+
+              {% if project.showcase %}
+              {% include resume-frame.html showcase=project.showcase %}
+              {% endif %}
+            </section>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+    {% endfor %}
+
+  </section>
+</main>
+
+<script src="{{site.baseurl}}/assets/frame-effect.js"></script>

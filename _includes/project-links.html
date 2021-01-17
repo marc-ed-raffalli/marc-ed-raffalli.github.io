@@ -1,0 +1,29 @@
+{% assign dictionary=site.data.dictionary %}
+
+<footer class="mer-project-links d-flex flex-wrap justify-content-around align-items-center mt-3">
+  {% include link-icon.html
+  label=dictionary.viewOnGitHub
+  icon='github'
+  href=include.project.repo
+  showLabel=include.showLabel %}
+
+  {% if include.project.page %}
+  {% include link-icon.html
+  label=dictionary.viewPage
+  icon='globe'
+  href=include.project.page
+  showLabel=include.showLabel %}
+  {% endif %}
+
+  {% if include.project.npm %}
+  {% include link-icon.html
+  label=dictionary.viewOnNPM
+  icon='npm'
+  href=include.project.npm
+  showLabel=include.showLabel %}
+  {% endif %}
+
+  {% if page.ref != include.project.ref %}
+  {% include page-read-more-link.html url=projectPage.url %}
+  {% endif %}
+</footer>

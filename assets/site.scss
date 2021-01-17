@@ -1,16 +1,12 @@
 ---
 ---
 
-//
 // Jekyll front matter
 // https://jekyllrb.com/docs/assets/
-//
-//
-// Copyright © 2017 Marc Ed. Raffalli
-//
 
-@import '../assets/tutorials/index';
-@import 'mer-theme/site';
+// Copyright © 2021 Marc Ed. Raffalli
+
+@import 'site';
 
 html,
 body {
@@ -19,8 +15,4 @@ body {
   line-height: 1.2;
 }
 
-@keyframes mer-scaleUp {
-  100% {
-    transform: scale(1.25);
-  }
-}
+

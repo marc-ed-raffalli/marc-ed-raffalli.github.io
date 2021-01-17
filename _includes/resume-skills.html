@@ -1,0 +1,18 @@
+{% assign dictionary=site.data.dictionary %}
+{% assign resume=site.data.resume %}
+
+<section class="mer-skills">
+  <h2>{{dictionary.keySkills}}</h2>
+
+  <ul>
+    {% for skill in resume.keySkills %}
+    <li>{{skill}}</li>
+    {% endfor %}
+  </ul>
+
+  {% assign about=site.pages | where:'ref', 'about' | first %}
+
+  {% if page.ref != about.ref %}
+  {% include page-read-more-link.html url=about.url %}
+  {% endif %}
+</section>

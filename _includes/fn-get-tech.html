@@ -1,0 +1,9 @@
+{% assign techById=site.data.technologies.data %}
+
+{% for tech in include.list %}
+{% if techById[tech] %}
+{{techById[tech].name}},
+{% else %}
+{{tech}},
+{% endif %}
+{% endfor %}

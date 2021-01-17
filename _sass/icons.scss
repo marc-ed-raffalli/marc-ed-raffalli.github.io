@@ -1,0 +1,20 @@
+.mer-icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 1rem;
+  width: 1rem;
+
+  &.linkedin {
+    background-image: url('logos/linkedin.svg');
+  }
+
+  &.github {
+    background-image: url('logos/github.svg');
+  }
+
+  &.npm {
+    background-image: url('logos/npm.svg');
+  }
+}

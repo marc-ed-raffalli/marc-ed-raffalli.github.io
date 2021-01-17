@@ -1,15 +1,14 @@
 ---
 layout:       topic
 lang:         en
-
 ref:          declarative-test-structure-generator-v0
 parent:       projects
-title:        declarative-test-structure-generator v0
-
-description:  Node based declaration driven test structure generator. Used as dependency and central point for docs.
-
 permalink:    /en/projects/declarative-test-structure-generator-v0
-tags:         [Automation, Bdd, Generator, js, Mocha, Node, Npm, Structure, Test]
+hasCodeBlock: true
+
+title:        declarative-test-structure-generator v0
+description:  Node based declaration driven test structure generator. Used as dependency and central point for docs.
+tags:         [Automation, Bdd, Generator, js, Mocha, Node, NPM, Structure, Test]
 ---
 
 <div class="mer-js-alert alert alert-warning" role="alert">

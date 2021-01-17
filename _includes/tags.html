@@ -1,15 +1,5 @@
-{% if include.tags[0].first %}
-
-{% for tag in include.tags %}
-<div class="mer-tags">
-  {% include tagsForIn.html tags=tag %}
-</div>
-{% endfor %}
-
-{% else %}
-<div class="mer-tags">
+<ul class="mer-tags list-unstyled">
   {% for tag in include.tags %}
-  {% include tag.html tag=tag %}
+  <li>{% include tag.html tag=tag %}</li>
   {% endfor %}
-</div>
-{% endif %}
+</ul>

@@ -1,23 +1,23 @@
 {% assign translatedSet=include.set | where:'lang', page.lang %}
-{% assign p=page %}
+{% assign allPagesAndPosts=site.posts | concat: site.pages %}
 
-<nav class="mer-breadcrumb">
-  {% for i in (0..9) %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    {% capture pageRefHierarchy %}{% include fn-get-hierarchy.html page=page %}{% endcapture %}
+    {% assign pageRefHierarchy = pageRefHierarchy | strip_newlines | split: ',' | reverse %}
 
-  <div class="mer-breadcrumb-item">
-    /
-    {% if page.ref==p.ref %}
-    <span class="mer-secondary p-1">{{p.title}}</span>
-    {% else %}
-    <a class="p-1" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
-    {% endif %}
-  </div>
+    {% for ref in pageRefHierarchy %}
 
-  {% unless p.parent %}
-  {% break %}
-  {% endunless %}
+    {% assign pageData = allPagesAndPosts | where:'ref', ref | first %}
 
-  {% assign p=translatedSet | where:'ref', p.parent | first %}
+    <li class="breadcrumb-item" {% if page.ref==ref %} aria-current="page" {% endif %}>
+      {% if page.ref==ref %}
+      {{pageData.title}}
+      {% else %}
+      <a href="{{site.baseurl}}{{pageData.url}}">{{pageData.title}}</a>
+      {% endif %}
+    </li>
 
-  {% endfor %}
+    {% endfor %}
+  </ol>
 </nav>

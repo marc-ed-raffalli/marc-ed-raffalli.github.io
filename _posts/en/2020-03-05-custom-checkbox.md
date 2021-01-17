@@ -6,6 +6,7 @@ parent:      posts
 title:       How to create a custom checkbox
 description: Quick tutorial showing a basic implementation for a custom checkbox.
 date:        2020-03-05
+hasCodeBlock: true
 tags:        [tutorials, frontend, css]
 keywords:    [
 css,
@@ -20,6 +21,9 @@ web
 ---
 
 This post is both to preserve a quick experiment for later use and to show how easy it is to implement a custom checkbox.
+
+**Note:** As this does not follow semantic HTML, no meaning is conveyed to users of assistive technologies with e.g. screen readers.
+Make sure to add the appropriate ARIA labels.
 
 <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="marc-ed-raffalli" data-slug-hash="OJVxqbw" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Custom checkbox">
   <span>See the Pen <a href="https://codepen.io/marc-ed-raffalli/pen/OJVxqbw">

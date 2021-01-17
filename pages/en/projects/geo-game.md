@@ -3,13 +3,12 @@ layout:       topic
 lang:         en
 ref:          geo-game
 parent:       projects
+permalink:    /en/projects/geo-game
+hasCodeBlock: true
 
 title:        World Geography Game
-
 description:  Discover or refresh your geography in an easy and interactive way.
               Find the countries by name, capital or flag and learn much more about each country.
-
-permalink:    /en/projects/geo-game
 tags:         [React, Redux, React Router, Leaflet, Bootstrap 4, deployment, game]
 ---
 
@@ -34,29 +33,27 @@ The principles planned for the first release were kept quite simple.
 - Keep track of the current game score
 - Show the answers to the questions at the end
 
-![Landing page]({{site.baseurl}}/assets/img/projects/geo-game/landing-page.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
+![Landing page]({{site.baseurl}}/assets/projects/geo-game/landing-page.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
 
 **Update 05/02/2018**
 
 The v2 focused on bringing multi languages support with 20 languages.
 
-![Landing page v2]({{site.baseurl}}/assets/img/projects/geo-game/landing-page-v2.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
+![Landing page v2]({{site.baseurl}}/assets/projects/geo-game/landing-page-v2.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
 
 ## Data
 
-{% assign translatedPages=site.pages | where:'lang', page.lang %}
-
 ### Data v1
 
-{% assign geoJsonTranslatedPageDef=translatedPages | where:'ref', 'geo-json-data-processor' | first %}
-  
+{% assign geoJsonProcessorPage=site.pages | where:'ref', 'geo-json-data-processor' | first %}
+
 Data sources:
 
 - [Ash Kyd](https://github.com/AshKyd/geojson-regions)
 - [Mohammed Le Doze](https://github.com/mledoze/countries)
 
 The data was crunched together in the
-[{{geoJsonTranslatedPageDef.title}}]({{site.baseurl}}{{geoJsonTranslatedPageDef.url}}) project.
+[{{geoJsonProcessorPage.title}}]({{site.baseurl}}{{geoJsonProcessorPage.url}}) project.
 The output is under the following format: (*abbreviated for simplicity*)
 
 ```json
@@ -92,12 +89,12 @@ The output is under the following format: (*abbreviated for simplicity*)
 ```
 
 - `properties`   used by some core game features but also to provide more info about the country.
-- `geometry`     used to show the countries' shape and implement the interactive feature.  
+- `geometry`     used to show the countries' shape and implement the interactive feature.
 - `translations` will be used in the second release which should support multiple languages.
 
 ### Data v2
 
-{% assign worldGeoDataTranslatedPageDef=translatedPages | where:'ref', 'world-geography-data-processor' %}
+{% assign worldGeoDataProcessorPage=site.pages | where:'ref', 'world-geography-data-processor' | first %}
 
 Data sources:
 
@@ -109,7 +106,7 @@ Data sources:
     - Regions / Sub-regions
     - Countries / territories
     - Capitals
-  
+
 - [Ash Kyd](https://github.com/AshKyd/geojson-regions)
   - Geo Json geometries
 - [Mohammed Le Doze](https://github.com/mledoze/countries)
@@ -122,12 +119,12 @@ Data sources:
 
 The data for v2 was reorganized into two groups:
 
-- translation sensitive data (country names, capital) 
+- translation sensitive data (country names, capital)
 - generic data (geojson, flag, etc)
 
 The data was crunched together in the
-[{{worldGeoDataTranslatedPageDef[0].title}}]({{site.baseurl}}{{worldGeoDataTranslatedPageDef[0].url}}) project.
-The languages to target in the extraction are passed as params, making painless the selection of supported locales. 
+[{{worldGeoDataProcessorPage.title}}]({{site.baseurl}}{{worldGeoDataProcessorPage.url}}) project.
+The languages to target in the extraction are passed as params, making painless the selection of supported locales.
 
 
 #### Output folder structure
@@ -143,7 +140,7 @@ geo-json/
   asia.json
   europe.json
   ...
-locales/          --- localized data  
+locales/          --- localized data
   bg/             --- by locale code
     africa.json   --- by continent
     asia.json
@@ -185,14 +182,14 @@ The learning curve was greatly reduced thanks to *Dan Abramov* who published two
 - [A Beginner's Guide to Redux Middleware](https://www.codementor.io/vkarpov/beginner-s-guide-to-redux-middleware-du107uyud) by Valeri Karpov
 
 The App skeleton and the build are handled by
-[Create React App](https://github.com/facebookincubator/create-react-app). 
+[Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Localization
 
 *Added on 05/02/2018*
 
 The App localization was achieved with [react-localize-redux](https://ryandrewjohnson.github.io/react-localize-redux/)
-(see [author's article](https://medium.com/@ryandrewjohnson/adding-multi-language-support-to-your-react-redux-app-cf6e64250050)) 
+(see [author's article](https://medium.com/@ryandrewjohnson/adding-multi-language-support-to-your-react-redux-app-cf6e64250050))
 
 The loading of the translated data is done using async ES6 import to allow chunking of the bundle and reduce bandwidth usage.
 
@@ -200,27 +197,27 @@ The loading of the translated data is done using async ES6 import to allow chunk
 
 A core part of the game and a key to its usability is the interactive map.
 
-It was implemented with the components from 
+It was implemented with the components from
 [React Leaflet](https://github.com/PaulLeCam/react-leaflet/)
 (*wrapper for [Leaflet](http://leafletjs.com/)*)
 and uses the tiles from the free
-[Mapbox](https://www.mapbox.com/) service. 
+[Mapbox](https://www.mapbox.com/) service.
 
 ### Geo JSON layer
 
 The [`GeoJSON`](https://github.com/PaulLeCam/react-leaflet/blob/master/docs/Components.md#geojson)
 layer component is used to display the `geometry` (*mentioned above*), style the area or to listen to the different mouse events.
 
-![Geo JSON layer]({{site.baseurl}}/assets/img/projects/geo-game/geo-json-layer.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
+![Geo JSON layer]({{site.baseurl}}/assets/projects/geo-game/geo-json-layer.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
 
 ### Marker layer
 
 The [`Marker`](https://github.com/PaulLeCam/react-leaflet/blob/master/docs/Components.md#marker)
 layer component is used to display the results at the end of the game.
 Each marker is placed on the coordinates pointed by `properties.latlng` and listens to the click event.
-On click, the map shows a custom popup with the country flag and information. 
- 
-![Marker layer]({{site.baseurl}}/assets/img/projects/geo-game/popup-layer.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
+On click, the map shows a custom popup with the country flag and information.
+
+![Marker layer]({{site.baseurl}}/assets/projects/geo-game/popup-layer.png){:class="mer-img mer-shadedFrame p-2 mb-2"}
 
 
 ## Analytics
@@ -228,7 +225,7 @@ On click, the map shows a custom popup with the country flag and information.
 Having insights on the game usage and popularity is a great source of motivation.
 No longer than a few days after the first beta version was deployed, users from 4 countries already visited the page.
 It is for sure a motivator to prioritize multi languages support.
-  
+
 I added Google Analytics to the App router to gather insights on the page views and audience of the game.
 The library [react-ga](https://github.com/react-ga/react-ga) helped a lot and the integration was quick.
 

@@ -6,6 +6,7 @@ parent:       posts
 title:        Centered dialog
 description:  This tutorial covers step by step how to implement a dialog box with a dimmed overlay.
 date:         2017-09-12
+hasCodeBlock: true
 tags:         [tutorials, frontend, css]
 keywords:     [
 absolute,
@@ -108,7 +109,7 @@ The dialog markup can be placed *anywhere* inside `.box`.
     left: 0;
     height: 100%;
     width: 100%;
-    
+
     display: flex;
     justify-content: center; /* centers horizontally */
     align-items: center;     /* centers vertically */
@@ -117,7 +118,7 @@ The dialog markup can be placed *anywhere* inside `.box`.
 
 ### Overlay
 
-Whichever method below is used, 
+Whichever method below is used,
 the overlay should be `position: absolute` with `top: 0` and `left: 0`.
 
 #### Method 1: element
@@ -143,11 +144,11 @@ One way to display the overlay is to add it as an element, we will give it the c
 ```
 
 This method is especially useful when the overlay requires to be styled dynamically, e.g. custom background color / image.
-If this is not the case, you may be interested in the alternative method. 
+If this is not the case, you may be interested in the alternative method.
 
 #### Method 2: pseudo-element
 
-It is possible to avoid adding the overlay as a DOM element by using CSS pseudo elements e.g. `:before`, `:after`. 
+It is possible to avoid adding the overlay as a DOM element by using CSS pseudo elements e.g. `:before`, `:after`.
 
 ```html
 <div class="dialog">
@@ -180,7 +181,7 @@ The dialog message should have `z-index: 1` to be displayed on top.
 
 ### Common issues
 
-**Rendering issues** 
+**Rendering issues**
 
 Check the following:
 
@@ -194,7 +195,7 @@ Check the following:
   - force it to wrap to the next line with `word-break: break-word;`
   - keep one line and display `...` by applying these rules to the element containing the text
     ```css
-    .message { 
+    .message {
       text-overflow: ellipsis;
       overflow: hidden;
     }
@@ -202,7 +203,7 @@ Check the following:
 
 **Message text overflows vertically**
 
-- If your message height is greater than your box height, 
+- If your message height is greater than your box height,
   you should apply these styles:
   ```css
   .message {

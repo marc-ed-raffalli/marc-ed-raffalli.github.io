@@ -1,20 +1,19 @@
 ---
 layout:       topic
 lang:         en
-
 ref:          declarative-test-structure-generator
 parent:       projects
-title:        declarative-test-structure-generator
-
-description:  Node based declaration driven test structure generator. Used as dependency and central point for docs.
-
 permalink:    /en/projects/declarative-test-structure-generator
-tags:         [Automation, Bdd, Generator, TypeScript, js, Mocha, Jest, Jasmine, Node, Npm, Structure, Test]
+hasCodeBlock: true
+
+title:        declarative-test-structure-generator
+description:  Node based declaration driven test structure generator. Used as dependency and central point for docs.
+tags:         [Automation, Bdd, Generator, TypeScript, js, Mocha, Jest, Jasmine, Node, NPM, Structure, Test]
 ---
 
-[![Build Status](https://travis-ci.org/marc-ed-raffalli/declarative-test-structure-generator.svg?branch=master)](https://travis-ci.org/marc-ed-raffalli/declarative-test-structure-generator)
-[![Coverage Status](https://coveralls.io/repos/github/marc-ed-raffalli/declarative-test-structure-generator/badge.svg?branch=master)](https://coveralls.io/github/marc-ed-raffalli/declarative-test-structure-generator?branch=master)
-[![NPM version](https://img.shields.io/npm/v/declarative-test-structure-generator.svg)](https://www.npmjs.com/package/declarative-test-structure-generator)
+{% include project-tags.html ref=page.ref typescript=true %}
+
+The TypeScript typings are provided with the package.
 
 This page is dedicated to the latest version.
 The documentation for v0 is available [here](./declarative-test-structure-generator-v0).

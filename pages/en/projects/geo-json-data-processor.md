@@ -3,32 +3,30 @@ layout:       topic
 lang:         en
 ref:          geo-json-data-processor
 parent:       projects
+permalink:    /en/projects/geo-json-data-processor
+hasCodeBlock: true
 
 title:        Countries GeoJson data processor
-
 description:  Node based data processor, merges two sets of data into one.
               It provides each country geometry and different properties such as country name and capital as well as population, lat/lng, area, etc
               The generated data is used by another of my project, the game "World Geography Game".
-
-permalink:    /en/projects/geo-json-data-processor
 tags:         [Node, Async, Chai, Mocha, Geography, data processor]
 ---
 
 {% assign projects=site.data.projects %}
-{% assign translatedPages=site.pages | where:'lang', page.lang %}
 
-{% assign geoGameProject=projects.list | where:'ref', page.ref | first %}
-{% assign geoGameTranslatedPageDef=translatedPages | where:'ref', 'geo-game' | first %}
+{% assign project=projects.list | where:'ref', page.ref | first %}
+{% assign geoGamePage=site.pages | where:'ref', 'geo-game' | first %}
 
 Node script extracting data from different sources in order to build the data set required for the
-[{{geoGameTranslatedPageDef.title}}]({{site.baseurl}}{{geoGameTranslatedPageDef.url}}) v1 project.  
+[{{geoGamePage.title}}]({{site.baseurl}}{{geoGamePage.url}}) v1 project.
 
-{% include gitHubCodeOn.html url=geoGameProject.repo %}
+{% include gitHubCodeOn.html url=project.repo %}
 
 ## Background
 
 This project was driven by the need to get data for the first version of the
-[{{geoGameTranslatedPageDef.title}}]({{site.baseurl}}{{geoGameTranslatedPageDef.url}}) project.
+[{{geoGamePage.title}}]({{site.baseurl}}{{geoGamePage.url}}) project.
 
 The sources available did not provide a data set fitting the game requirements.
 The goal was to combines these data sets:
@@ -47,11 +45,11 @@ The script receives the path for the targeted data in each sources as well as th
 **Example:**
 
 ```bash
-node .  --geoJson     ../geojson-regions/countries/50m/all.geojson \ 
-        --countries   ../countries/countries.json                  \ 
+node .  --geoJson     ../geojson-regions/countries/50m/all.geojson \
+        --countries   ../countries/countries.json                  \
         --flags       ../countries/data/                           \
         --output      dist                                         \
-        --outputFlags dist/flags    
+        --outputFlags dist/flags
 ```
 
 - `geoJson`: Path to the file in the *geojson-regions* repository providing a collection of features
@@ -66,7 +64,7 @@ node .  --geoJson     ../geojson-regions/countries/50m/all.geojson \
 
 ### CLI & JS API
 
-The project is mainly planned for CLI usage, however the `process.argv` is reduced to an Object mapping the key values. 
+The project is mainly planned for CLI usage, however the `process.argv` is reduced to an Object mapping the key values.
 The resulting object is passed to the JS API (which can also be called directly).
 
 ### Flow based
@@ -83,9 +81,9 @@ The tests written are using [Mocha](https://mochajs.org/) + [Chai BDD](http://ch
 
 ## Credits
 
-Special thanks to 
-[Ash Kyd - GeoJson regions](https://github.com/AshKyd/geojson-regions) 
-and 
+Special thanks to
+[Ash Kyd - GeoJson regions](https://github.com/AshKyd/geojson-regions)
+and
 [Mohammed Le Doze - Countries](https://github.com/mledoze/countries)
 for their projects gathering the countries data.
 

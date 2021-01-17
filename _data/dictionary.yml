@@ -1,0 +1,22 @@
+workExperience: Work Experience
+projects: Projects
+projectsSubHeader: List of personnal projects, ranging from quick Chrome extension, educative game, to fully tested and production ready Node packages.
+posts: Posts
+postsSubHeader: >
+  With the new school year starting and the Coderdojo sessions coming back, it looks like a good time to start writing some posts.
+  I hope it will be helpful for your projects, good luck!
+responsibilities: Responsibilities
+achievements: Achievements
+keySkills: Key Skills
+readMore: Read more
+viewPage: View page
+viewAllProjects: View all projects
+viewAllPosts: View all posts
+viewOnGitHub: View on GitHub
+viewOnNPM: View on NPM
+goToProfileGitHub: Go to my Github
+goToProfileNPM: Go to my Linkedin
+npmVersionTag: NPM version
+buildStatusTag: Build Status
+coverageStatusTag: Coverage Status
+mitLicenceTag: MIT License

@@ -1,32 +1,26 @@
 title: Marc Ed. Raffalli
+description: Portfolio site
 baseurl: ''
 
 google_analytics: UA-97591265-1
 
 author_name: Marc Ed. Raffalli
-github_username:  marc-ed-raffalli
+github_username: marc-ed-raffalli
 
-copyright: © 2020 - Marc Ed. Raffalli
-
-networks:
-  - name: linkedin
-    url:  https://www.linkedin.com/in/marc-ed-raffalli/
-    icon: ion-logo-linkedin
-  - name: github
-    url:  https://github.com/marc-ed-raffalli/
-    icon: ion-logo-github
-
-menu:
-  - ref:  projects
-  - ref:  posts
-
-exclude:
-  - .idea
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - scripts
-  - package.json
+copyright: © 2021 - Marc Ed. Raffalli
 
 sass:
   style: compressed
+
+markdown: kramdown
+
+exclude:
+  - package.json
+  # defaults
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

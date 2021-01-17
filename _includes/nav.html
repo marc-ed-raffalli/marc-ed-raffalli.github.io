@@ -1,0 +1,22 @@
+{% assign sitemap=site.data.sitemap.nav %}
+
+{% capture pageRefHierarchy %}{% include fn-get-hierarchy.html page=page %}{% endcapture %}
+{% assign pageRefHierarchy = pageRefHierarchy | strip_newlines | split: ',' | reverse %}
+{% assign topPageParentRef = pageRefHierarchy | first %}
+
+<nav class="mer-nav">
+  <ul class="nav align-items-baseline">
+    {% for pageRef in sitemap %}
+    {% assign p=site.pages | where:'ref', pageRef | first %}
+    <li class="nav-item">
+      {% if page.ref == pageRef %}
+      <span class="nav-link">{{p.title}}</span>
+      {% else %}
+      <a href="{{p.url}}" class="nav-link {% if pageRef == topPageParentRef %} parent-active {% endif %}">
+        {{p.title}}
+      </a>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

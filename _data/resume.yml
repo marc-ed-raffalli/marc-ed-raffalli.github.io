@@ -1,0 +1,213 @@
+intro:
+  header: Hello, I'm Marc Ed. Raffalli
+  subHeader: '"Frontend by day, full stack by night!"'
+  message: >
+    I'm a UI developer creating web applications for over 8 years using frameworks like **Angular** or **React**.
+    But also have experience as a full stack developer creating **Express** applications (**Node**).
+
+linkedin: https://www.linkedin.com/in/marc-ed-raffalli/
+github: https://github.com/marc-ed-raffalli/
+
+title: Lead UI Developer
+
+keySkills:
+  - Web Application development (Angular / React)
+  - Unit / BIT tests (Jasmine / Jest / Mocha)
+  - End to End tests (Protractor / Cypress)
+  - Node Application development
+  - Build pipeline (Webpack / Gulp)
+  - Customer liaison, requirements analysis
+
+experience:
+  professional:
+    - title: Team lead / UI developer
+      organization: neueda
+      location: Athlone
+      projects:
+        - name: FX Click 3.0
+          client: citi
+          period: May 2020 - actual
+          showcase:
+            id: fxClick
+            stack: [ angular, typescript, sass, mobx, jasmine ]
+          responsibilities:
+            - Collaborating with with PO, UX and backend teams to gather business and technical requirements.
+            - Implement and test (unit, BIT) real time modern and responsive applications UI.
+            - Ensure the correct migration of the features implemented with Flash (deprecated) to modern Angular.
+            - Lead UI developer, mentoring team members via programming sessions and code reviews.
+          achievements:
+            - description: Played a key role implementing required post trade features and securing the release to the end customers while the team was reduced by half
+              keyPoints:
+                - Daily collaboration with the backend to resolve API misalignments and missing features
+                - Daily status report with the management for risk and impediment analysis
+          technologies:
+            - [ angular, mobx, ngrx, Bootstrap-like lib ]
+            - [ jest, tsmockito ]
+            - [ typescript, sass, tslint, prettier ]
+
+        - name: Exchange Simulator
+          client: citi
+          period: October 2019 - May 2020
+          responsibilities:
+            - Liaising with customer, gathering business requirements, fostering global vision, proposing UI designs.
+            - Coordinating team, feature planning, prioritizations and development.
+            - Design, implementation and testing (unit, BIT, e2e) modern and responsive UI.
+            - Configure and maintain CI configuration.
+            - Present solutions to end users and redact clear and concise user manuals.
+            - Lead UI developer, mentoring team members via programming sessions and code reviews.
+          achievements:
+            - description: Created a mono-repo infrastructure combining backend services and UI applications.
+              keyPoints:
+                - Optimised CI build based on git commit
+                - Angular project structure with applications and libraries (component/services/models/etc).
+                - Static code analysis (TSLint / Prettier)
+            - description: Dockerized all applications and set up docker-compose shared configurations with Nginx reverse proxy.
+              keyPoints:
+                - Optimized Docker build time by half using a shared image as base
+                - Generic configuration extended to fit multiple environments
+            - description: Conducted over 5 training sessions with the customer's teams about Angular best practices and security.
+              keyPoints:
+                - Covered Angular reusability concepts (components, services, etc), testing basic/advanced and available code quality tooling
+                - Covered the OWASP Top 10 vulnerabilities and how to avoid introducing vulnerabilities
+            - description: Implemented 30+ e2e tests to cover all business use cases and validate message payload exchanged with Kafka.
+              keyPoints:
+                - Tests written using Protractor and the Page Object Model pattern
+                - Integrated with a Node Kafka client to receive and validate published messages
+          technologies:
+            - [ angular, material-angular ]
+            - [ jasmine, protractor ]
+            - [ typescript, sass, tslint, circleci ]
+            - [ docker, docker-compose, nginx, kafka ]
+
+        - name: Data Reconciliation Tools
+          client: aviva
+          period: October 2018 - October 2019
+          responsibilities:
+            - Liaising with customer, gathering business requirements, fostering global vision, proposing UI designs.
+            - Design, implementation and testing (unit / BIT, e2e) modern and responsive UI.
+            - Lead UI developer, mentoring team members via programming sessions and code reviews.
+          achievements:
+            - description: Migrated multiple Create React App silos into a new mono-repo structure with shared libraries.
+              keyPoints:
+                - Yarn workspace based infrastructure with shared `Webpack` and `Jest` configurations
+                - Configured `Webpack` + `Babel` + `TypeScript` enabling path aliases, watch mode, lazy loading, tree shaking.
+                - Configured TSLint Static code analysis to ensure consistency and good practices
+            - description: Collaborated directly with the client to promote and implement an innovative UX.
+              keyPoints:
+                - Implemented a graph request editor with forms using `D3` and `Redux`
+                - Conducted demo sessions and gathered feedback from end users
+          technologies:
+            - [ react, redux, d3, bootstrap, express ]
+            - [ jest, react-testing-library, puppeteer, cypress ]
+            - [ webpack, typescript, sass, yarn, tslint, circleci ]
+
+    - title: UI developer
+      organization: dept
+      location: Dublin
+      projects:
+        - name: Kaspersky Website, worldwide
+          client: kaspersky
+          period: March 2018 - September 2018
+          responsibilities:
+            - Implementation and testing of new and existing features on 20+ localised (ltr, rtl) e-commerce sites.
+            - Implementation of new and existing responsive layouts using mobile first approach.
+            - Performance analysis and tuning of existing solution
+          achievements:
+            - description: Refactored a complex form layout used in 20+ languages (ltr, rtl) to solve a recurring issue.
+              keyPoints:
+                - Implemented a responsive layout detection (counting columns) based on CSS selectors to reliably adapt to the displayed form and device.
+          technologies:
+            - [ angularjs, momentjs ]
+            - [ karma, jasmine ]
+            - [ babel, sass, tslint, npm, gulp ]
+
+    - title: UI developer
+      period: August 2017 - December 2017
+      organization: core
+      location: Dublin
+      projects:
+        - name: Advertising big data report application
+          responsibilities:
+            - Assist in leading the implementation of the product rebranding
+            - Presentation of complex data using charts and data visualisation (AmCharts, D3)
+            - Provide advice refactoring current solution to a responsive design
+            - Provide UX guidance to achieve simple and coherent design across pages
+            - Advise on client side design and architecture
+            - Design, implementation and testing of new UI components
+          technologies:
+            - [ angularjs, amcharts, d3, bootstrap, jasmine ]
+            - [ webpack, typescript, sass, tslint, babel, karma, npm ]
+
+    - title: Team lead / UI developer
+      period: July 2012 - Aug 2017
+      organization: ericsson
+      location: Athlone
+      projects:
+        - name: Ericsson UI SDK
+          responsibilities:
+            - Lead UI developer, mentoring team members via programming sessions and code reviews.
+            - Implementation and testing of Ericsson branded UI components / map / charts / i18n / ... (25+ repositories)
+            - Conducting online trainings (20+) and on-site workshops (Ireland / Spain / India)
+            - Worldwide team and developer support via internal forums (~2k msgs) / email / IM
+          achievements:
+            - description: Lead a 2 days worldwide workshop to ensure the delivery of i18n ready ENM UIs
+              keyPoints:
+                - Coordinated support for 10+ teams to implement required translation mechanism
+            - description: Implemented the ENM program delivery statistics portal
+              keyPoints:
+                - Rewarded for hard work facing tight deadlines
+                - Responsive UI presenting realtime delivery KPIs in charts, visualisations
+                - Implemented UI services consuming data from ElasticSearch
+            - description: Installed and configured Jenkins and GitLab to improve team workflow
+              keyPoints:
+                - Configured the pull-request build to deploy to a dedicated environment for review
+                - Configured hooks between CI and the repositories
+          technologies:
+            - [ require-js, d3, leaflet, momentjs ]
+            - [ mocha, sinon, chai, phantomjs ]
+            - [ webpack, babel, npm ]
+            - [ gitlab, jenkins, confluence ]
+
+        - name: Ericsson Document Search Engine
+          responsibilities:
+            - Architecture, implementation and testing of extensible document crawler leveraging Java SPI
+            - Implement plugins to parse specific content (DITA XML / HTML / API docs)
+            - Support team to index their content after CI build
+          achievements:
+            - description: Solution used for ENM UI documentation
+            - description: Solution used for internal documentation and API docs published on Nexus
+          technologies:
+            - [ java, jsoup, junit, powermock ]
+            - [ elasticsearch ]
+
+        - name: Mobile World Congress 2015
+          client: mwc
+          responsibilities:
+            - Lead UI developer for the application frontend
+            - Implement realtime maps, charts and visualization using D3 and Leaflet
+          technologies:
+            - [ require-js, d3, leaflet, momentjs, socket-io ]
+            - [ mocha, sinon, chai ]
+
+        - name: Inner Source Solutions Portal
+          responsibilities:
+            - Design, implement, test and deploy full stack solution, initially in PHP, then refactored using Node LoopBack
+            - Design and implement UI dashboard presenting daily activity reports, trends and rankings
+            - Liaising with PO and managers, gathering requirements and proposing innovative features
+            - Implement and maintain statistics engine extracting KPI about code, bugs, views and messages
+          achievements:
+            - description: Portal used internally world-wide as a one stop shop for all existing solutions
+              keyPoints:
+                - Editable user role and access management to allow each team to edit the details of their solutions
+                - Integrated with LDAP authentication
+            - description: Promoted and developed the concept of statistics engine collecting activity KPIs
+              keyPoints:
+                - Code activity KPI collected from Gerrit and GitLab
+                - Bugs throuput KPI collected from Jira
+                - Forums activity KPI collected from Confluence
+                - Page views KPI collected from Piwik
+                - Analysis report of team vs/ inner-community code contributions
+          technologies:
+            - [ require-js, d3, leaflet, momentjs, nodejs, loopback, express, php, mysql ]
+            - [ mocha, sinon, chai ]
+            - [ elasticsearch, jira, confluence, gitlab, piwik ]

@@ -3,17 +3,17 @@ layout:       topic
 lang:         en
 ref:          time-sheet-automation-chrome-extension
 parent:       projects
+permalink:    /en/projects/time-sheet-automation-chrome-extension
+hasCodeBlock: true
 
 title:        Timesheet Automation Chrome Extension
-
 description:  Simple solution to automate timesheet reporting.
               Save yourself the hassle of writing the same time-in, time-out for every worked day of the month!
-permalink:    /en/projects/time-sheet-automation-chrome-extension
 tags:         [Chrome extension, Timesheet, Automation, Don't repeat... automate, HTML, CSS, js]
 ---
 
 <div class="text-center">
-  <div class="font-italic font-weight-bold" style="font-size: 1.5rem">
+  <div class="font-italic font-weight-bold fs-4">
     "How would you feel if you could sort out your timesheet reporting in 3 clicks?"
   </div>
 
@@ -372,13 +372,8 @@ const utils = {
 
 The first implementation had the following popup and message on the page.
 
-<img class="mer-img pt-2 mer-shadedFrame"
-           src="/assets/img/projects/fill-my-timesheet/v1-popup.png"
-           alt="Popup screenshot - v1">
-
-<img class="mer-img pt-2 mer-shadedFrame"
-           src="/assets/img/projects/fill-my-timesheet/v1-screenshot.png"
-           alt="General screenshot - v1">
+{% include img.html src='/assets/projects/fill-my-timesheet/v1-popup.png' alt='Popup screenshot - v1' %}
+{% include img.html src='/assets/projects/fill-my-timesheet/v1-screenshot.png' alt='General screenshot - v1' %}
 
 
 ### Second phase
@@ -389,13 +384,9 @@ The simplest version of the popup did not comfortably fit the form without havin
 As a solution the form was moved to an options page and the popup updated with a select box.
 [Options page](https://developer.chrome.com/extensions/options)
 
-<img class="mer-img pt-2 mer-shadedFrame"
-           src="/assets/img/projects/fill-my-timesheet/v2-popup.png"
-           alt="Popup screenshot - v2">
 
-<img class="mer-img pt-2 mer-shadedFrame"
-           src="/assets/img/projects/fill-my-timesheet/v2-screenshot.png"
-           alt="General screenshot - v2">
+{% include img.html src='/assets/projects/fill-my-timesheet/v2-popup.png' alt='Popup screenshot - v2' %}
+{% include img.html src='/assets/projects/fill-my-timesheet/v2-screenshot.png' alt='General screenshot - v2' %}
 
 ## Issues encountered
 

@@ -1,0 +1,9 @@
+{% assign dictionary=site.data.dictionary %}
+{% assign resume=site.data.resume %}
+
+<div class="mer-links d-flex align-items-center justify-content-around">
+  <a class="d-none d-print-block" href="{{resume.github}}">{{resume.github}}</a>
+  <a class="d-none d-print-block" href="{{resume.linkedin}}">{{resume.linkedin}}</a>
+  {% include link-icon.html label=dictionary.goToProfileGitHub icon='github' href=resume.github %}
+  {% include link-icon.html label=dictionary.goToProfileNPM icon='linkedin' href=resume.linkedin %}
+</div>

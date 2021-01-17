@@ -1,30 +1,49 @@
 list:
-  - ref:    lb-declarative-e2e-test
-    repo:   https://github.com/marc-ed-raffalli/lb-declarative-e2e-test/
-    npm:    https://www.npmjs.com/package/lb-declarative-e2e-test
+  - ref: declarative-e2e-test
+    repo: https://github.com/marc-ed-raffalli/declarative-e2e-test
+    page: https://marc-ed-raffalli.github.io/declarative-e2e-test
+    npm: https://www.npmjs.com/package/declarative-e2e-test
+    technologies: [ nodejs, typescript, jest, mocha, jasmine, tslint ]
 
-  - ref:    declarative-test-structure-generator
-    repo:   https://github.com/marc-ed-raffalli/declarative-test-structure-generator/
-    npm:    https://www.npmjs.com/package/declarative-test-structure-generator
+  - ref: apollo-hooks-extended
+    repo: https://github.com/marc-ed-raffalli/apollo-hooks-extended
+    npm: https://www.npmjs.com/package/apollo-hooks-extended
+    technologies: [ react, graphql, typescript, jest, eslint ]
 
-  - ref:    time-sheet-automation-chrome-extension
-    repo:   https://github.com/marc-ed-raffalli/fill-my-timesheet/
+  - ref: lb-declarative-e2e-test
+    repo: https://github.com/marc-ed-raffalli/lb-declarative-e2e-test/
+    npm: https://www.npmjs.com/package/lb-declarative-e2e-test
+    technologies: [ nodejs, mocha, eslint ]
+
+  - ref: declarative-test-structure-generator
+    repo: https://github.com/marc-ed-raffalli/declarative-test-structure-generator/
+    npm: https://www.npmjs.com/package/declarative-test-structure-generator
+    technologies: [ nodejs, typescript, jest, tslint ]
+
+  - ref: time-sheet-automation-chrome-extension
+    repo: https://github.com/marc-ed-raffalli/fill-my-timesheet/
+    page: https://chrome.google.com/webstore/detail/fill-my-timesheet/ghjamlegpfehemlapljopkoaacihgapg
     image:
-      url:  '/assets/img/projects/fill-my-timesheet/v2-popup.png'
-      alt:  Image for "Fill my timesheet!"
+      url: '/assets/projects/fill-my-timesheet/v2-popup.png'
+      alt: Image for 'Fill my timesheet!'
+    technologies: [ javascript, Chrome ]
 
-  - ref:    geo-game
-    repo:   https://github.com/marc-ed-raffalli/geo-game/
-    page:   https://marc-ed-raffalli.github.io/geo-game/
+  - ref: geo-game
+    repo: https://github.com/marc-ed-raffalli/geo-game/
+    page: https://marc-ed-raffalli.github.io/geo-game/
     image:
-      url:  '/assets/img/projects/geo-game/europe.svg'
-      alt:  Image for World Geography Game
+      url: '/assets/projects/geo-game/europe.svg'
+      alt: Image for World Geography Game
+    technologies: [ react, javascript, leaflet, bootstrap, redux, eslint ]
 
-  - ref:    world-geography-data-processor
-    repo:   https://github.com/marc-ed-raffalli/world-geography-data/
+  - ref: world-geography-data-processor
+    repo: https://github.com/marc-ed-raffalli/world-geography-data/
+    technologies: [ nodejs, javascript, mocha ]
 
-  - ref:    geo-json-data-processor
-    repo:   https://github.com/marc-ed-raffalli/countries-geo-data/
+  - ref: geo-json-data-processor
+    repo: https://github.com/marc-ed-raffalli/countries-geo-data/
+    technologies: [ nodejs, javascript, mocha, eslint ]
 
-  - ref:    confluence-to-jekyll-data-processor
-    repo:   https://github.com/marc-ed-raffalli/confluence-to-jekyll/
+  - ref: confluence-to-jekyll-data-processor
+    repo: https://github.com/marc-ed-raffalli/confluence-to-jekyll/
+    technologies: [ nodejs, javascript, mocha ]

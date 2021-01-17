@@ -1,0 +1,20 @@
+$baseGap: .25rem;
+$gap-sm: $baseGap;
+$gap-md: $baseGap * 2;
+$gap-lg: $baseGap * 4;
+$gap-xl: $baseGap * 6;
+$gap-xxl: $baseGap * 8;
+
+$borderRadius: 3px;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1400px;
+
+$citiBlue: #1C4882;
+$citiBluePale1: #595BC9;
+$citiBluePale2: lighten($citiBluePale1, 10);
+$citiBlueDark1: #2C2D63;
+$citiRed: #cc2131;

@@ -1,34 +1,33 @@
-{% assign translatedPosts=site.posts | where:'lang', page.lang %}
-{% assign topLevelPosts=translatedPosts | where:'parent', 'posts' %}
+{% assign topLevelPosts=site.posts | where:'parent', 'posts' %}
+{% assign dictionary=site.data.dictionary %}
 
-<div class="mer-posts">
-  {% for p in topLevelPosts %}
-  {% assign subTopic=translatedPosts | where:'parent', p.ref %}
+<header>
+  <h1>{{page.title}}</h1>
+  <p>{{dictionary.postsSubHeader | markdownify}}</p>
+</header>
 
-  <div class="mer-section">
-    <h2 class="mb-2">
-      <a class="mer-link" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
-      <span class="pl-2 mer-secondary mer-posts-date">{{p.date | date: "%Y-%m-%d"}}</span>
-    </h2>
+{% for p in topLevelPosts %}
+{% assign subTopic=site.posts | where:'parent', p.ref %}
 
-    <div class="mer-posts-description">
-      <div class="mb-2">
-        {{p.description | markdownify}}
-      </div>
+<div class="mer-section pt-3 border-top">
+  {% include section-header.html href=p.url title=p.title %}
+  <p class="text-secondary small">{{p.date | date: "%Y-%m-%d"}}</p>
 
-      {% if subTopic %}
-      <ul class="my-2">
-        {% for sp in subTopic %}
-        <li>
-          <a href="{{site.baseurl}}{{sp.url}}">{{sp.title}}</a>
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
+  <div class="mer-posts-description">
+    {{p.description | markdownify}}
 
-      {% include tags.html tags=p.tags %}
-    </div>
+    {% if subTopic %}
+    <ul class="my-3">
+      {% for sp in subTopic %}
+      <li>
+        <a href="{{site.baseurl}}{{sp.url}}">{{sp.title}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% include tags.html tags=p.tags %}
   </div>
-  {% endfor %}
 </div>
+{% endfor %}
 

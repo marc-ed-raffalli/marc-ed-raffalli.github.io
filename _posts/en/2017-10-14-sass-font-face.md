@@ -4,8 +4,9 @@ lang:         en
 ref:          scss-font-face
 parent:       posts
 title:        SASS font-face mixin
-description:  Import fonts using a simple SASS mixin.  
+description:  Import fonts using a simple SASS mixin.
 date:         2017-10-14
+hasCodeBlock: true
 tags:         [tutorials, frontend, css, scss]
 keywords:     [
 advice,
@@ -33,7 +34,6 @@ Importing the variations of a font can be a very tedious job with CSS only.
 Languages like SASS help a lot to reduce the burden.
 
 {% include skipToArrow.html
-direction='down'
 href='#code'
 message='Go to code'
 %}
@@ -44,7 +44,7 @@ Anybody interested in web development, with the basic knowledge of SASS.
 
 **Objective**
 
-Create a SASS mixin allowing to import a complex set of font variations. 
+Create a SASS mixin allowing to import a complex set of font variations.
 
 **Targeted / tested browsers**
 
@@ -101,7 +101,7 @@ It would be required to check the array length before accessing an index in orde
       $url: url('#{$basePath}/#{map_get($def, 'file')}.#{$ext}') format(quote($format));
       $src: append($src, $url, comma);
     }
-    
+
     @font-face {
       font-family: quote($fontFamily);
       font-weight: map_get($def, 'weight');
@@ -113,7 +113,7 @@ It would be required to check the array length before accessing an index in orde
 ```
 
 Writing this post for a font with a couple of variations would appear overkill.
-This is the reason why I choose the font 
+This is the reason why I choose the font
 [Montserrat](https://fonts.google.com/specimen/Montserrat) and its 18 styles for the demo below.
 
 ```scss
@@ -139,5 +139,5 @@ This is the reason why I choose the font
 ));
 ```
 
-This implementation allows to add fonts supported by modern browsers.
-If you want to support older browsers (e.g add eot font), update the `addFontFace` mixin.
+This implementation allows adding fonts supported by modern browsers.
+If you want to support older browsers (e.g. add eot font), update the `addFontFace` mixin.

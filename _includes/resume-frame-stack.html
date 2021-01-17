@@ -1,0 +1,11 @@
+{% assign techLogoDir=site.data.technologies.config.path %}
+{% assign techById=site.data.technologies.data %}
+
+<div class="mer-tech-stack">
+  {% for item in include.stack %}
+  <div class="mer-logo">
+    <img src="{{site.baseurl}}{{techLogoDir}}/{{techById[item].path}}"
+         alt="{{techById[item].name}}"/>
+  </div>
+  {% endfor %}
+</div>

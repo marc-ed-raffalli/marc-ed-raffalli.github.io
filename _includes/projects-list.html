@@ -1,0 +1,35 @@
+{% assign projects=site.data.projects.list %}
+{% assign dictionary=site.data.dictionary %}
+
+<header>
+  <h1>{{page.title}}</h1>
+  <p>{{dictionary.projectsSubHeader | markdownify}}</p>
+</header>
+
+{% for project in projects %}
+
+{% assign projectPage=site.pages | where:'ref', project.ref | first %}
+<section class="mer-section mer-project d-flex {% if project.image %} withImage {% endif %} pt-3 border-top">
+  {% if project.image %}
+  <div class="mer-project-preview">
+    <a href="{{site.baseurl}}{{projectPage.url}}"
+       class="mb-3 d-block"
+    >
+      <img class="img-fluid border shadow-sm"
+           src="{{site.baseurl}}{{project.image.url}}"
+           alt="{{project.image.alt}}">
+    </a>
+  </div>
+  {% endif %}
+
+  <div class="mer-project-details">
+    <h2>
+      <a href="{{site.baseurl}}{{projectPage.url}}" class="text-dark text-decoration-none">{{projectPage.title}}</a>
+    </h2>
+    {{projectPage.description | markdownify}}
+
+    {% include tags.html tags=projectPage.tags %}
+    {% include project-links.html project=project %}
+  </div>
+</section>
+{% endfor %}

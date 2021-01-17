@@ -1,0 +1,18 @@
+{{include.page.ref}},
+{% if include.page.parent %}
+{% assign allPagesAndPosts=site.posts | concat: site.pages %}
+{% assign topPageParentRef=include.page.parent %}
+{{topPageParentRef}},
+
+{% for i in (0..9) %}
+{% assign tmpPage = allPagesAndPosts | where:'ref', topPageParentRef | first %}
+
+{% unless tmpPage.parent %}
+{% break %}
+{% endunless %}
+
+{% assign topPageParentRef=tmpPage.parent %}
+{{topPageParentRef}},
+{% endfor %}
+
+{% endif %}

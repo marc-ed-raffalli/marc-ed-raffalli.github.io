@@ -1,0 +1,23 @@
+<div class="mer-project-tags">
+  {% assign dictionary=site.data.dictionary %}
+
+  {% if include.typescript %}
+  <img src="https://img.shields.io/badge/Built%20with-TypeScript-blue" alt="Built with TypeScript badge">
+  {% endif %}
+
+  {% assign npmHref='https://www.npmjs.com/package/REF' | replace: 'REF', include.ref %}
+  {% assign npmSrc='https://img.shields.io/npm/v/REF.svg' | replace: 'REF', include.ref %}
+  {% include link-img.html href=npmHref src=npmSrc alt=dictionary.npmVersionTag %}
+
+  {% assign travisHref='https://travis-ci.org/marc-ed-raffalli/REF' | replace: 'REF', include.ref %}
+  {% assign travisSrc='https://travis-ci.org/marc-ed-raffalli/REF.svg?branch=master' | replace: 'REF', include.ref %}
+  {% include link-img.html href=travisHref src=travisSrc alt=dictionary.buildStatusTag %}
+
+  {% assign coverallsHref='https://coveralls.io/github/marc-ed-raffalli/REF?branch=master' | replace: 'REF', include.ref %}
+  {% assign coverallsSrc='https://coveralls.io/repos/github/marc-ed-raffalli/REF/badge.svg?branch=master' | replace: 'REF', include.ref %}
+  {% include link-img.html href=coverallsHref src=coverallsSrc alt=dictionary.coverageStatusTag %}
+
+  {% assign coverallsHref='https://github.com/marc-ed-raffalli/REF/blob/master/LICENSE' | replace: 'REF', include.ref %}
+  {% assign coverallsSrc='https://img.shields.io/badge/License-MIT-green.svg' | replace: 'REF', include.ref %}
+  {% include link-img.html href=coverallsHref src=coverallsSrc alt=dictionary.mitLicenceTag %}
+</div>

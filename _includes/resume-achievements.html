@@ -1,0 +1,33 @@
+{% assign techLogoDir=site.data.technologies.config.path %}
+{% assign techById=site.data.technologies.data %}
+{% assign dictionary=site.data.dictionary %}
+
+<ul>
+  {% for achievement in include.achievements %}
+  <li>
+    {% assign itemKey=achievement.description | remove: ' ' | remove: '+' | downcase | slice: 0, 32 %}
+    <p>
+      <span class="align-middle lh-1">{{achievement.description}}</span>
+
+      {% if achievement.keyPoints %}
+      <button class="btn btn-link py-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#{{itemKey}}"
+              aria-expanded="false"
+              aria-controls="{{itemKey}}">
+        {{dictionary.readMore}}
+      </button>
+      {% endif %}
+    </p>
+
+    {% if achievement.keyPoints %}
+    <ul class="collapse" id="{{itemKey}}">
+      {% for keyPoint in achievement.keyPoints %}
+      <li>{{keyPoint | markdownify}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

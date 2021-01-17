@@ -2,9 +2,11 @@
 layout:       topic
 lang:         en
 parent:       post-common-issues
+ref:          post-common-issues-full-height
 title:        Full height
 description:  This tutorial explains the reason why an element height 100% may not always render as we think.
 date:         2017-09-12
+hasCodeBlock: true
 tags:         [tutorials, frontend, css]
 keywords:     [
 absolute,
@@ -55,13 +57,13 @@ The element covers the height of its own content.
 **Why?**
 
 The reason is simple, the dimensions in `%` are relative to the parent element.
-The `html` and `body` tag do not have any height set by default. 
+The `html` and `body` tag do not have any height set by default.
 
 ## Don't
 
 ### Don't use fixed numbers
 
-It would be easy to set the height of the element to the value of the height of the screen in pixels. 
+It would be easy to set the height of the element to the value of the height of the screen in pixels.
 
 ```css
 .h-100 {

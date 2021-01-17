@@ -1,0 +1,24 @@
+config:
+  path: '/assets/logos'
+data:
+  citi:
+    name: Citi Bank
+    path: citi.svg
+  core:
+    name: Core
+    path: core.png
+  dept:
+    name: DEPT
+    path: dept.svg
+  ericsson:
+    name: Ericsson LMI
+    path: ericsson.svg
+  kaspersky:
+    name: Kaspersky Lab
+    path: kaspersky.svg
+  mwc:
+    name: Mobile World Congress
+    path: mwc.png
+  neueda:
+    name: Neueda Technologies
+    path: neueda.png

@@ -1,0 +1,30 @@
+{% case include.showcase.id %}
+{% when 'fxClick' %}
+<div class="mer-frame fxClick" data-frame-id="fxClick">
+  <div class="mer-screen bg-white">
+    <div class="mer-header fw-bold d-flex justify-content-between">
+      <span>FX Click</span>
+      <div class="mer-logo"></div>
+    </div>
+    <div class="mer-stats">
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+    </div>
+    <div class="mer-chart">
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+    </div>
+    <div class="mer-chart-b">
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+      <div class="mer-bar"></div>
+    </div>
+  </div>
+  {% include resume-frame-stack.html stack=include.showcase.stack %}
+</div>
+{% endcase %}

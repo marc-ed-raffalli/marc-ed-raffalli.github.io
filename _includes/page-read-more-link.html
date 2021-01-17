@@ -1,0 +1,6 @@
+{% assign dictionary=site.data.dictionary %}
+
+<a href="{{include.url}}" class="mer-readMore text-decoration-none">
+  <span>{{include.more | default: dictionary.readMore}}</span>
+  {% include icon-chevron-right.html %}
+</a>
