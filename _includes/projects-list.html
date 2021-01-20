@@ -9,7 +9,7 @@
 {% for project in projects %}
 
 {% assign projectPage=site.pages | where:'ref', project.ref | first %}
-<section class="mer-section mer-project d-flex {% if project.image %} withImage {% endif %} pt-3 border-top">
+<section class="mer-section mer-project d-flex {% if project.image %} withImage {% endif %} pt-3 border-top mer-aos">
   {% if project.image %}
   <div class="mer-project-preview">
     <a href="{{site.baseurl}}{{projectPage.url}}"

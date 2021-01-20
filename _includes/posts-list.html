@@ -9,7 +9,7 @@
 {% for p in topLevelPosts %}
 {% assign subTopic=site.posts | where:'parent', p.ref %}
 
-<div class="mer-section pt-3 border-top">
+<div class="mer-section pt-3 border-top mer-aos">
   {% include section-header.html href=p.url title=p.title %}
   <p class="text-secondary small">{{p.date | date: "%Y-%m-%d"}}</p>
 

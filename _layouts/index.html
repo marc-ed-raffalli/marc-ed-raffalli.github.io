@@ -34,7 +34,7 @@ layout: default
     <ul class="list-unstyled">
       {% for project in projects.list %}
       {% assign projectPage=site.pages | where:'ref', project.ref | first %}
-      <li class="d-flex">
+      <li class="d-flex mer-aos">
         <div class="flex-grow-1">
           <a href="{{site.baseurl}}{{projectPage.url}}">{{projectPage.title}}</a>
           <p class="m-0 small text-secondary">{{projectPage.description | split: '.' | first}}</p>
@@ -66,7 +66,7 @@ layout: default
     <ul class="list-unstyled">
       {% for post in topLevelPosts %}
       {% assign postPage=site.posts | where:'ref', post.ref | first %}
-      <li>
+      <li class="mer-aos">
         <a href="{{site.baseurl}}{{postPage.url}}">{{postPage.title}}</a>
         <p class="m-0 small text-secondary">{{postPage.description | split: '.' | first}}</p>
       </li>

@@ -35,7 +35,7 @@ layout: default
         <h4>{{dictionary.projects}}</h4>
         <ul class="mer-projects">
           {% for project in contract.projects %}
-          <li class="mer-project">
+          <li class="mer-project mer-aos">
             {% include resume-project-name.html project=project %}
 
             {% include resume-tech-list.html technologies=project.technologies %}
