@@ -20,13 +20,17 @@ keySkills:
 
 experience:
   professional:
+    - title: Senior Software Engineer
+      organization: fidelity
+      location: Galway
+
     - title: Team lead / UI developer
       organization: neueda
       location: Athlone
       projects:
         - name: FX Click 3.0
           client: citi
-          period: May 2020 - actual
+          period: May 2020 - March 2021
           showcase:
             id: fxClick
             stack: [ angular, typescript, sass, mobx, jasmine ]

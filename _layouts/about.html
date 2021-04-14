@@ -32,7 +32,9 @@ layout: default
           <div class="mer-contract-location">{{contract.location}}</div>
         </header>
 
+        {% if contract.projects %}
         <h4>{{dictionary.projects}}</h4>
+        {% endif %}
         <ul class="mer-projects">
           {% for project in contract.projects %}
           <li class="mer-project mer-aos">

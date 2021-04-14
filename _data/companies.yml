@@ -16,6 +16,9 @@ data:
   ericsson:
     name: Ericsson LMI
     path: ericsson.svg
+  fidelity:
+    name: Fidelity Investments
+    path: fidelity.png
   kaspersky:
     name: Kaspersky Lab
     path: kaspersky.svg
