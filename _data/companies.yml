@@ -1,6 +1,9 @@
 config:
   path: '/assets/logos'
 data:
+  aviva:
+    name: Aviva
+    path: aviva.svg
   citi:
     name: Citi Bank
     path: citi.svg
